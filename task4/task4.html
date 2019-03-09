@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>登录页</title>
+</head>
+<style>
+	body{
+		background: #eff0f4;
+		margin: 0;
+		padding: 0;
+	}
+	header{
+		background: #5fc0cd;
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 3vh;
+		color: white;
+	}
+	.number,.password{
+		background: white;
+		margin-top: 2vh;
+		height: 10vh;
+	}
+	img{
+		display: inline-block;
+		position: relative;
+		height: 2rem;
+		top: 50%;
+		margin-top: -1rem;
+		padding-left: 2rem;
+		padding-right: 1.5rem;
+		border-right: 1px solid #eaedee;
+	}
+	input{
+		border: 0;
+		outline: 0;
+		display: inline-block;
+		font-size: 1rem;
+		position: relative;
+		top: 50%;
+		transform:translateY(-50%);
+		margin-left: 2rem;
+	}
+	button{
+		background: #5fc0cd;
+		width: 100vw;
+		margin-top: 7vh;
+		padding: 3vh;
+		text-align: center;
+		color: white;
+		font-size: 1em;
+	}
+	.end{
+		font-size: 0.5em;
+		display: flex;
+		flex-direction: row-reverse;
+		padding: 2vw;
+	}
+	a{color: #8bcdd7;}
+
+</style>
+
+<body>
+	<header>
+		<div>注册</div>
+		<div><b>登陆</b></div>
+		<div>关闭</div>
+	</header>
+	<div class="number">
+		<img src="iphone.png">
+		<input type="text" maxlength="11" placeholder="请输入手机号"><br>
+	</div>
+	<div class="password">
+		<img src="locked.png">
+		<input type="password" placeholder="请输入密码"><br>
+	</div>
+	<button>登 陆</button>
+	<div class="end"><a href="#">忘记密码</a></div>
+</body>
+</html>
