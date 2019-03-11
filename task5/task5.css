@@ -1,0 +1,15 @@
+header{
+	background: #5fc0cd;
+	color: white;
+	position: fixed;
+	top: 0;
+	padding: 2vh 1vw 2vh 1vw;
+	width: 100vw;
+}
+
+.head{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-block;
+}

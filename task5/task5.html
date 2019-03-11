@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>护工个人页面</title>
+	<meta name="viewport" content="width=device-width">
+</head>
+
+<style>
+	body{
+		margin: 0;
+	}
+	header{
+	background: #5fc0cd;
+	color: white;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height:9vh;
+	z-index: 2;
+	}
+	main{
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+	}
+	footer{
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		z-index: 2;
+		display: flex;
+		justify-content: space-around;
+	}
+	.return{
+		position: fixed;
+		left: 3vw;
+		top: 3vh;
+		height: 3vh;
+	}
+	.head{
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 3vh;
+	}
+	.message,.phone{
+		display: inline-block;
+		width: 38vw;
+		border: 1px solid #5fc0cd;
+		text-align: center;
+		border-radius: 5px;
+		margin-bottom: 3vh;
+		padding: 2vh 2vw;
+
+	}
+	.message{
+		color: #5fc0cd;
+		margin-left: 3vw;
+	}
+	.phone{
+		background: #5fc0cd;
+		color: white;
+		margin-right: 3vw;
+	}
+	#intro{
+		height: 25vh;
+		margin-top: 9vh;
+		background-image: url(bgimage.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.skill{
+		border-left: 3px solid #5fc0cd;
+		margin:2vh 3vw;
+		padding: 0 2vw;
+	}
+	.condition{
+		border-bottom: 1px solid #e1e5e7;
+		margin: 2vh 3vw 0;
+		padding: 0 3vw 2vh;
+	}
+	.table{
+		border-bottom: 1px solid #e1e5e7;
+		padding:0 3vw 2vh;
+		margin: 2vh 3vw;
+	}
+	 
+</style>
+
+<body>
+	<header>
+		<img class="return" src="return.png" alt="back">
+		<div class="head">个人主页</div>
+	</header>
+
+	<main>
+		<div id="intro">高素雅</div>
+		<div class="skill">专业技能</div>
+		<hr>
+		<div class="condition">住家不含餐</div>
+		<div class="table">从业年限</div>
+		<div class="table">工作时间</div>
+		<div class="table">服务价格</div>
+		<div class="table">自我介绍</div>
+	</main>
+
+
+	<footer>
+		<div class="message">留言</div>
+		<div class="phone">电话联系</div>
+	</footer>
+
+
+</body>
+</html>
