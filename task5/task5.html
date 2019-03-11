@@ -9,6 +9,7 @@
 <style>
 	body{
 		margin: 0;
+		padding: 0;
 	}
 	header{
 	background: #5fc0cd;
@@ -21,17 +22,20 @@
 	}
 	main{
 		position: fixed;
-		height: 100%;
-		width: 100%;
+		height: 88vh;
+		width: 100vw;
 		z-index: 1;
+		overflow: auto;
 	}
 	footer{
 		position: fixed;
 		bottom: 0;
 		width: 100vw;
+		height: 12vh;
 		z-index: 2;
 		display: flex;
 		justify-content: space-around;
+		background: white;
 	}
 	.return{
 		position: fixed;
@@ -43,50 +47,98 @@
 		position: fixed;
 		left: 50%;
 		transform: translateX(-50%);
-		top: 3vh;
+		top: 2.5vh;
+		font-size: 1.1rem;
 	}
-	.message,.phone{
+	.left,.right{
 		display: inline-block;
 		width: 38vw;
 		border: 1px solid #5fc0cd;
 		text-align: center;
 		border-radius: 5px;
-		margin-bottom: 3vh;
+		margin: 2vh 0;
 		padding: 2vh 2vw;
-
 	}
-	.message{
+	.left{
 		color: #5fc0cd;
 		margin-left: 3vw;
 	}
-	.phone{
+	.right{
 		background: #5fc0cd;
 		color: white;
 		margin-right: 3vw;
 	}
-	#intro{
+	#bgimage{
 		height: 25vh;
 		margin-top: 9vh;
 		background-image: url(bgimage.png);
 		background-repeat: no-repeat;
 		background-size: cover;
+		filter: blur(5px);
 	}
+	#bgimage:before{
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		background-color: black;
+		height: 25vh;
+		width: 100vw;
+		opacity: 0.2;
+	}
+	.intro{
+		color: white;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 15vh;
+		left: 5vw;
+	}
+	.adjust{padding-left: 8vw;}
+	.photo{
+		height: 13vh;
+		display: inline;
+	}
+	.age{font-size: 0.9rem;padding-left: 1vw;}
+	.map{height: 0.7rem;}
+	.site{font-size: 0.5rem;padding: 0;}
 	.skill{
 		border-left: 3px solid #5fc0cd;
 		margin:2vh 3vw;
-		padding: 0 2vw;
+		padding-left:5vw;
 	}
 	.condition{
-		border-bottom: 1px solid #e1e5e7;
-		margin: 2vh 3vw 0;
-		padding: 0 3vw 2vh;
+		border-top: 1px solid #e1e5e7;
+		padding: 2vh 8vw;
+	}
+	.star{height: 1rem;}
+	.star2{
+		margin-left: 2vw;
+		padding-left: 3vw;
+		border-left: 1px solid #e1e5e7;
 	}
 	.table{
 		border-bottom: 1px solid #e1e5e7;
-		padding:0 3vw 2vh;
-		margin: 2vh 3vw;
+		padding:2vh 0;
+		margin: 0 3vw;
 	}
-	 
+	.year{border-top: 1px solid #e1e5e7;}
+	.introdution{
+		padding:2vh 3vw;
+		border-bottom: 1px solid #e1e5e7;
+		display: flex;
+		align-items: center;
+	}
+	span{
+		display: inline-block;
+		padding: 0 5vw;
+	}
+	.subhead{
+		border-right: 1px solid #e1e5e7;
+		color: #999999;
+	}
+	.red{color: red}
+	.details{width: 55vw;}
 </style>
 
 <body>
@@ -96,20 +148,45 @@
 	</header>
 
 	<main>
-		<div id="intro">高素雅</div>
+		<div id="bgimage"></div>
+		<div class="intro">
+				<img class="photo" src="photo.png" alt="photo">
+				<div class="adjust">
+				<div>高素雅<span class="age">51岁</span></div>
+				<div><img class="map" src="map.png" alt="map">
+				<span class="site">北京.通州.果园</span></div>
+				</div>
+		</div>
 		<div class="skill">专业技能</div>
-		<hr>
-		<div class="condition">住家不含餐</div>
-		<div class="table">从业年限</div>
-		<div class="table">工作时间</div>
-		<div class="table">服务价格</div>
-		<div class="table">自我介绍</div>
+		<div class="condition">
+			<img class="star" src="star.png" alt="star">
+			住家
+			<img class="star star2" src="star.png" alt="star">
+			不含餐
+		</div>
+		<div class="table year">
+			<span class="subhead">从业年限</span>
+			<span>0～3年</span>
+		</div>
+		<div class="table">
+			<span class="subhead">工作时间</span>
+			<span>全天</span>
+		</div>
+		<div class="table">
+			<span class="subhead">服务价格</span>
+			<span class="red">25元/小时</span>
+		</div>
+		<div class="introdution">
+			<span class="subhead self">自我介绍</span>
+			<span class="details">可以洗衣、做饭、照顾老人。在护工方面有5年的经验，经验丰富
+			</span>
+		</div>
 	</main>
 
 
 	<footer>
-		<div class="message">留言</div>
-		<div class="phone">电话联系</div>
+		<div class="left">留言</div>
+		<div class="right">电话联系</div>
 	</footer>
 
 
