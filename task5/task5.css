@@ -119,6 +119,7 @@ body{
 		border-bottom: 1px solid #e1e5e7;
 		display: flex;
 		align-items: center;
+		margin-bottom: 16vh;
 	}
 	span{
 		display: inline-block;
