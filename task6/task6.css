@@ -1,6 +1,6 @@
 body{margin: 0;border: 0;}
 header{
-	height: 10vh;
+	height: 8vh;
 	width: 100vw;
 	background-color: #5fc0cd;
 	position: fixed;
@@ -9,27 +9,106 @@ header{
 	align-items: center;
 	justify-content: center;
 }
+main{
+	height: 90vh;
+	overflow: auto;
+}
 .amployer{
 	background-color: #55a8b3;
 	color: white;
 	display: inline;
-	padding: 1vh 5vw 1vh 3vw;
+	padding: 0.7vh 4vw 0.7vh 2vw;
 	margin-right: -2vw;
 	border-radius: 7px;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 .worker{
 	background-color: white;
 	color: #5fc0cd;
 	display: inline;
-	padding: 1vh 3vw;
+	padding: 0.7vh 2vw;
 	border-radius: 7px;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 .mark{
-	height: 5vh;
+	height: 4vh;
 	position: absolute;
 	right: 5vw;
+}
+.title{
+	height: 7vh;
+	margin-top: 8vh;
+	border-bottom: 1px solid #e1e5e7;
+	display: flex;
+	justify-content: space-around;
+}
+.drop{
+	display: inline-block;
+	color: #999999;
+	margin: 2vh 0;
+	border-right: 1px solid #e1e5e7;
+	width: 33vw;
+	text-align: center;
+}
+.down{
+	height: 1vh;
+	float: right;
+	margin-top: 1.2vh;
+	margin-right: 1.5vw;
+}
+
+.d3{border:0;}
+
+.dropdown{
+	display: none;
+	text-align: center;
+	background-color: #f9f9f9;
+	position: absolute;
+	top: 15.2vh;
+}
+.dd1{
+	padding: 2vh 13vw;
+	left: 0;
+}
+.dd2{
+	padding: 2vh 13vw;
+	left: 48.5%;transform: translateX(-50%);
+}
+.dd3{
+	padding: 2vh 14vw;
+	right: 0;
+}
+p{
+	color: black;
+	margin: 0;
+}
+.d1:hover .dd1{display: block;}
+.d2:hover .dd2{display: block;}
+.d3:hover .dd3{display: block;}
+
+.data{
+	display: block;
+	padding: 1vh 0;
+	color: #999999;
+}
+.date,.mark0{height: 2vh;}
+.datew{color: black;padding-left: 1vw;}
+.right_r{height: 3vh;}
+.content{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #e1e5e7;
+}
+.price{
+	color: red;
+	display: inline-block;
+	padding-right: 1vw;
+}
+.lf{margin-left: 1vw;}
+.rg{
+	margin-right: 1vw;
+	display: flex;
+	align-items: center;
 }
 footer{
 	height: 10vh;
@@ -54,9 +133,8 @@ footer{
 	height: 5vh;
 	display: block;
 }
-.left,.right{
-	margin-left: 3vw;
-	margin-right: 3vw; 
+.left,.right,.center{
+	margin: 1vh 2vw;
 	font-size: 0.5rem;
 	text-align: center;
 }
