@@ -65,19 +65,12 @@ main{
 	background-color: #f9f9f9;
 	position: absolute;
 	top: 15.2vh;
+	padding: 2vh 0;
+	width: 33vw;
 }
-.dd1{
-	padding: 2vh 13vw;
-	left: 0;
-}
-.dd2{
-	padding: 2vh 13vw;
-	left: 48.5%;transform: translateX(-50%);
-}
-.dd3{
-	padding: 2vh 14vw;
-	right: 0;
-}
+.dd1{left: 0;}
+.dd2{left: 50%;transform: translateX(-50%);}
+.dd3{right: 0;}
 p{
 	color: black;
 	margin: 0;
@@ -92,7 +85,14 @@ p{
 	color: #999999;
 }
 .date,.mark0{height: 2vh;}
-.datew{color: black;padding-left: 1vw;}
+.datew{
+	color: black;
+	padding-left: 1vw;
+	width: 55vw;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 .right_r{height: 3vh;}
 .content{
 	display: flex;
@@ -104,7 +104,10 @@ p{
 	display: inline-block;
 	padding-right: 1vw;
 }
-.lf{margin-left: 1vw;}
+.lf{
+	width: 60vw;
+	margin-left: 1vw;
+}
 .rg{
 	margin-right: 1vw;
 	display: flex;
