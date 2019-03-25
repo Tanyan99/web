@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>结束</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
+<style>
+	body{margin: 0;}
+	.top{
+		color: white;
+		font-size: 1.4rem;
+		height: 10vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 2px solid #74d4eb;
+		background-color: #29bde0;
+	}
+	.left,.right{height: 4.5vh;margin: 0 1vw;}
+	.text1{margin-top: 1vh;}
+
+	.text2{	
+		padding: 1vh 6vw 3vh;
+		text-align: center;
+		font-size: 1.1rem;
+		color: #ffc865;
+		font-weight: bold;
+	}
+	.winpic{height: 18vh;}
+	.center{background-color: #29bde0;padding-bottom: 1vh;}
+
+	.text3 p{margin: 0;color: white;}
+	.text3 span{margin-right: 7vw;}
+	.text3{margin-left: 7vw;}
+
+	.content p{margin: 0.4vh 0;font-size: 0.8rem;color: #a6a6a6;}
+	.time{font-size: 0.4rem;color: #c7c7c7;margin-left: 10vw;}
+	.content{padding-left: 7vw;border-bottom: 1px solid #dddddd;}
+	.blank{height: 10.5vh}
+
+	main{
+		height: 90vh;
+		overflow: auto;
+	}
+	main:after{
+		content: "";
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		height:10vh;
+		background-color: #29bde0;
+		opacity: 0.5;
+	}
+	.footerlf{
+		position: fixed;
+		left: 7vw;
+		bottom: 2vh;
+		padding: 1.5vh 9vw;
+		background-color: #f66f6f;
+		border-radius: 8px;
+		color: white;
+	}
+	.footerrg{
+		position: fixed;
+		right: 7vw;
+		bottom: 2vh;
+		padding: 1.5vh 7vw;
+		background-color: #fbb435;
+		border-radius: 8px;
+		color: white;
+	}
+</style>
+<body>
+	<div class="top">
+		<a href="task7.html"><img class="left" src="03left.png" alt="主页"></a>
+		<span class="text1">游戏结果</span>
+		<img class="right" src="03right.png" alt="关于">
+	</div>
+	<main>
+	<div class="center">
+		<div class="text2">
+			<img class="winpic" src="03win.png" alt="卧底胜利">
+			<p>太棒了！你知道吗？在狼人杀游戏中只有20%的狼人取得最终的胜利哦</p>
+		</div>
+		<div class="text3">
+			<p>本局游戏共用时0小时25分钟</p>
+			<p><span>杀&nbsp&nbsp&nbsp手0人</span>
+			<span>警&nbsp&nbsp&nbsp察1人</span><span>平&nbsp&nbsp&nbsp民6人</span></p>
+			<p><span>狙击手0人</span>
+			<span>生&nbsp&nbsp&nbsp生1人</span></p>
+			<p>卧底词汇：爱新觉罗</p>
+			<p>水民词汇：劳尔哈赤</p>
+		</div>
+	</div>
+	<div>
+		<div class="content">
+			<span class="day">第一天</span><span class="time">0小时07分钟</span>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>早上：8号被全民投票杀死，8号是杀手</p>
+		</div>
+		<div class="content">
+			<span class="day">第二天</span><span class="time">0小时07分钟</span>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>早上：8号被全民投票杀死，8号是杀手</p>
+		</div>
+		<div class="content">
+			<span class="day">第三天</span><span class="time">0小时07分钟</span>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>早上：8号被全民投票杀死，8号是杀手</p>
+		</div>
+		<div class="content">
+			<span class="day">第四天</span><span class="time">0小时07分钟</span>
+			<p>晚上：5号被杀手杀死，5号是水民</p>
+			<p>早上：8号被全民投票杀死，8号是杀手</p>
+		</div>
+		<div class="blank"></div>
+	</div>
+	</main>
+	<a href="task7.html"><div class="footerlf">再来一局</div></a>
+	<div class="footerrg">上传并分享</div>
+</body>
+</html>

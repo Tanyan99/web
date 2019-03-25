@@ -7,7 +7,7 @@
 <style>
 	body{
 		margin: 0;
-		background-color: pink;
+		background-color: #29bde0;
 	}
 	.toplf{
 		height: 32px;
@@ -59,7 +59,7 @@
 	}
 	.play{
 		height: 8vh;
-		background: rgba(255,255,255,0.5);
+		background: rgba(255,255,255,0.67);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -133,6 +133,7 @@
 	    width: 88px;
 	    transform: rotate(180deg);
 	}
+	a{text-decoration:none;color: white;}
 </style>
 </head>
 <body>
@@ -145,7 +146,7 @@
 	<div class="play">
 		<span class="text1">发言讨论结束，大家请投票</span>
 		<div class="playpic"></div>
-		<audio class="mp3" src="wudi.mp3" controls></audio>
+		<audio class="mp3" src="wudi.mov" controls preload></audio>
 	</div>
 	<div class="down"></div>
 	<span class="text2">点击得票数最多人的头像</span>
@@ -213,8 +214,8 @@
 		</div>
 	</div>
 </main>
-	<div class="button">
+	<a href="task7.03.html"><div class="button">
 		<span class="text3">投死</span>
-	</div>
+	</div></a>
 </body>
 </html>
