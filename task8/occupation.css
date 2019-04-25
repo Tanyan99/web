@@ -1,13 +1,13 @@
 body{background-color: #fafafa;}
 
 .index{color: black;}
-.index:hover{color: black;text-decoration-line: 1px solid black;}
+.index:hover{color: black;text-decoration: none;}
 .occup{color: #29b078;font-weight: bold;}
-.occup:hover{color: #29b078;text-decoration-line: 1px solid #29b078;}
+.occup:hover{color: #29b078;text-decoration: none;}
 .subnav{padding: 20px 0;border-bottom: 1px solid #d0d6d9;}
 .subnav2{padding: 20px 0;border-bottom: 1px solid #edf1f2;}
 .subnav2 a{color: black;text-decoration: none;}
-.subnav2 a:hover{background-color: #29b078;}
+.subnav2 a:hover{background-color: #29b078;color: #ffffff;}
 
 .pag{padding: 20px 0;border-bottom: 1px solid #d0d6d9;font-size: 17px;font-weight: bold;}
 

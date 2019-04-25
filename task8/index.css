@@ -10,14 +10,12 @@
 .container{text-align: center;color: #9a9a9a;}
 .introduce{padding: 50px 0;}
 .text{color: #29b078;}
-@media screen and (min-width: 992px) {
-	.online_box{border-left: 1px dashed #999999;}
-}
 @media screen and (min-width: 1200px) {
 	.online_box{
 		padding-top: 35px;
 		padding-left: 68px;
 		float: right;
+		border-left: 1px dashed #999999;
 	}
 }
 
