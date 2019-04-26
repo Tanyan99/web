@@ -2,14 +2,14 @@
 	width: 8vh;
 	height: 8vh;
 	border: 1px solid pink;
-	background-color: pink;
+	background-color: white;
 	border-radius: 100%;
 }
 .circle2{
 	width: 8vh;
 	height: 8vh;
 	border: 1px solid pink;
-	background-color: pink;
+	background-color: white;
 	border-radius: 100%;
 	position: absolute;
 	top: 4vh;
@@ -19,7 +19,7 @@
 	width: 8vh;
 	height: 8vh;
 	border: 1px solid pink;
-	background-color: pink;
+	background-color: white;
 	position: absolute;
 	top: 4vh;
 }
