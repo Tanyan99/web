@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MyWeb</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
 	<link rel="stylesheet" href="heart.css">
 	<base target="_blank">
 </head>
@@ -31,26 +32,30 @@
 	}
 	.task{
 		color: white;
-		margin: 35vh 6vw 0 0;
+		margin: 35vh  0 0 6vw;
 	}
 	a{
 		text-decoration: none;
 		color: white;
-		target: _blank;
 	}
 	a:hover{color: pink;}
-	.heart{bottom: 5vh;right: 5vw;opacity: 0.02;}
+	.heart{opacity: 0.05;}
 	.love{
 		font-size: 0.5rem;
 		color: wheat;
-		position: fixed;
-		bottom: 6.5vh;
-		right: 3.25vw;
-		opacity: 0.06;
+		white-space:nowrap;
+		position: absolute;
+		opacity: 0.05;
 	}
+	.ainiaini{position: fixed;bottom: 13vh;right: 15vh;}
 	.ainiaini:hover .love{opacity: 1;}
-	.ainiaini:hover .heart{opacity: 0.05;}
-
+	.ainiaini:hover .heart{opacity: 0.1;}
+@media screen and (max-width: 768px){
+	.love{left: 3vh;top: 3vh;}	
+}
+@media screen and (min-width: 1024px) {
+	.love{left: 4vh;top: 3.5vh;}
+}
 </style>
 <body>
 	<header>
