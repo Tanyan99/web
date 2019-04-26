@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MyWeb</title>
+	<link rel="stylesheet" href="heart.css">
 	<base target="_blank">
 </head>
 <style>
@@ -30,7 +31,7 @@
 	}
 	.task{
 		color: white;
-		margin: 35vh 6vw;
+		margin: 35vh 6vw 0 0;
 	}
 	a{
 		text-decoration: none;
@@ -38,6 +39,18 @@
 		target: _blank;
 	}
 	a:hover{color: pink;}
+	.heart{bottom: 5vh;right: 5vw;opacity: 0.02;}
+	.love{
+		font-size: 0.5rem;
+		color: wheat;
+		position: fixed;
+		bottom: 6.5vh;
+		right: 3.25vw;
+		opacity: 0.06;
+	}
+	.ainiaini:hover .love{opacity: 1;}
+	.ainiaini:hover .heart{opacity: 0.05;}
+
 </style>
 <body>
 	<header>
@@ -60,6 +73,16 @@
 			<li><a href="../task8/index.html">修真院任务8</a></li>
 		</ul>
 	</div>
+<a href="../love/love.html">
+<div class="ainiaini">
+	<div class="heart">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="square"></div>
+	</div>
+	<span class="love">i love you</span>
+</div>
+</a>
 
 </body>
 </html>
