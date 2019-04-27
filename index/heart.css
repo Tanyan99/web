@@ -1,26 +1,23 @@
 .circle1{
-	width: 8vh;
-	height: 8vh;
-	border: 1px solid pink;
+	width: 6vh;
+	height: 6vh;
 	background-color: white;
 	border-radius: 100%;
 }
 .circle2{
-	width: 8vh;
-	height: 8vh;
-	border: 1px solid pink;
+	width: 6vh;
+	height: 6vh;
 	background-color: white;
 	border-radius: 100%;
 	position: absolute;
-	top: 4vh;
-	left: 4vh;
+	top: 3vh;
+	left: 3vh;
 }
 .square{
-	width: 8vh;
-	height: 8vh;
-	border: 1px solid pink;
+	width: 6vh;
+	height: 6vh;
 	background-color: white;
 	position: absolute;
-	top: 4vh;
+	top: 3vh;
 }
 .heart{position: absolute;transform: rotate(-45deg);}
