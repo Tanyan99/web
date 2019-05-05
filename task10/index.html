@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>51包装</title>
+	<meta name="viewport" 
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<style>
+/* 头部 css*/
+.header{
+	background-color: #1d7ad9;
+	color: #ffffff;
+	font-size: 14px;
+}
+.head{	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.right span{padding: 9px;}
+.head div{padding: 7px 0;}
+.right{border-left: 1px solid;border-right: 1px solid;}
+.right span:hover{background-color: #ffffff;color: black;}
+
+/* 导航条 */
+.navigation{background-color: #f9f9f9;}
+.button span{
+	padding: 9px 12px;
+	box-shadow: 5px 5px 5px #f4f4f4;
+	border-radius: 7px;
+	background-color: #ffffff;
+	margin-left: 10px;
+	width: 100px;
+	text-align: center;
+}
+.button span:hover{background-color: #1d7ad9;color: #ffffff;}
+.button,.button_img{display: flex;
+	flex-direction: row-reverse;
+	padding: 14px 15px 8px;
+}
+.button_img{display: none;}
+#nav_min p{
+	font-size: 14px;
+	text-align: center;
+	border: 1px solid #999;
+	border-radius: 6px;
+	box-shadow: 5px 5px 5px #999;
+	margin: 10px 12px;
+	padding: 12px 0;
+}
+#nav_min p:hover{background-color: #1d7ad9;color: #fff;}
+@media screen and (max-width: 720px) {
+	.button{display: none;}
+	.button_img{display: flex;}
+}
+@media screen and (min-width: 768px) {
+	#nav_min{display: none;}
+}
+.menu{width: 22px;height: 2px;
+	background-color: #999999;
+	margin-top: 7px;}
+.button_menu{display: flex;flex-direction: column;
+	padding: 10px;border: 1px solid black;border-radius: 5px;
+	width: 45px;}
+
+/* 步骤 */
+.step_img{display: flex;align-items: center;}
+.x{width: 40px;height: 4px;background-color: #999999;}
+.dot{width: 20px;height: 20px;border-radius: 50%;
+	background-color: #999999;color: #ffffff;
+	font-size: 13px;text-align: center;}
+.step span{
+	text-align: center;
+	margin-top: 10px;
+	width: 100px;
+	display: inline-block;
+}
+.step{margin-top: 16px;}
+.flow{
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+	margin-bottom: 70px;
+}
+@media screen and (max-width: 720px) {
+		.flow{margin-bottom: 1rem;}
+}
+.step:hover .step_img .x{
+	background-color: #FF7F02;color: #ffffff;}
+.step:hover .step_img .dot{
+	background-color: #FF7F02;color: #ffffff;}
+.step:hover span{color: #FF7F02;}
+
+/* main */
+.tittle{padding-left: 6px;border-left: 2px solid #1d7ad9;}
+
+.form{border: 1px solid #dee2e6;}
+
+.line{
+	color: #1d7ad9;
+	background-color: #f3f3f3;
+	height: 40px;
+	display: flex;
+	align-items: center;
+}
+input[type="radio"] + label::before{
+	content: "\a0";
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
+	width: 1em;
+	height: 1em;
+	margin-right: .4em;
+	border-radius: 50%;
+	border: 1px solid #999999;
+	text-indent: .15em;
+	line-height: 1;
+}
+input[type="radio"]:checked + label::before{
+	background-color: #1d7ad9;
+	background-clip: content-box;
+	padding: .2em;
+}
+input[type="radio"]{
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+select{
+	-webkit-appearance:none;
+	padding-right: 25px;
+	background-image: url(jiantou.png);
+	background-repeat: no-repeat;
+	background-position: 65px 0;
+}
+.box{ padding: 0 15px; }
+.box div{text-align: center;margin: 12px 0;}
+.move_up{position: relative;bottom: 20px;}
+
+.next{
+	padding-top: 8rem;
+	border-top: 1px solid #dee2e6;
+	text-align: center;
+}
+.next span{
+	display: inline-block;
+	padding: 12px 24px;
+	background-color: #e15053;
+	color: #ffffff;
+	border-radius: 5px;
+	width: 174px;
+}
+
+/* 尾部 */
+footer{padding-top: 25px;}
+@media screen and (min-width:1200px) {
+	.erweima{text-align: right;}
+}
+.end{
+	font-size: 11px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #1d7ad9;
+}
+</style>
+<body>
+<header>
+	<div class="header">
+		<div class="container head">
+			<div><span>客服热线：010-246-99999</span></div>
+			<div class="right">
+				<span>登录</span><span>注册</span>
+			</div>
+		</div>
+	</div>
+	<div class="navigation">
+		<div class="container button">
+			<span>质量保障</span>
+			<span>标准箱</span>
+			<span>在线定制</span>
+			<span>首页</span>
+		</div>
+		<div class="container button_img">
+			<a class="nav_min-show" data-toggle="collapse" href="#nav_min" aria-expanded="false" aria-conteonls="nav_min">
+				<div class="button_menu">
+					<span class="menu" style="margin: 0"></span>
+					<span class="menu"></span>
+					<span class="menu"></span>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="collapse" id="nav_min">
+		<p>首页</p>
+		<p>在线定制</p>
+		<p>标准箱</p>
+		<p>质量保障</p>
+	</div>
+</header>
+
+<main>
+	<div class="container">
+		<div class="flow">
+			<div class="step">
+				<div class="step_img">
+					<div class="x"></div>
+					<div class="dot">4</div>
+					<div class="x"></div>
+				</div>
+				<span>4.确定下单</span>
+			</div>
+			<div class="step">
+				<div class="step_img">
+					<div class="x"></div>
+					<div class="dot">3</div>
+					<div class="x"></div>
+				</div>
+				<span>3.上传附件</span>
+			</div>
+			<div class="step">
+				<div class="step_img">
+					<div class="x"></div>
+					<div class="dot">2</div>
+					<div class="x"></div>
+				</div>
+				<span>2.选择数量</span>
+			</div>
+			<div class="step">
+				<div class="step_img">
+					<div class="x"></div>
+					<div class="dot">1</div>
+					<div class="x"></div>
+				</div>
+				<span>1.定制纸盒</span>
+			</div>
+		</div>
+		<p class="tittle">请您按照下一步骤来定制您的纸箱</p>
+
+		<div class="form">
+			<div class="line">
+				<img src="box.png"alt="box"style="margin:0 12px;" height="15" width="19">
+				<span>选择箱形</span>
+			</div>
+			<div class="row box">
+				<div class="col-12 col-xl-2">
+					<input id="kind1" type="radio" name="kind" />
+					<label for="kind1">进口箱</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<input id="kind2" type="radio" name="kind" />
+					<label for="kind2">飞机箱</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<input id="kind3" type="radio" name="kind" />
+					<label for="kind3">天地盖</label>
+				</div>
+				<div class="col-12 col-xl-2"></div>
+				<div class="col-12 col-xl-2"></div>
+				<div class="col-12 col-xl-2">
+					<select>
+						<option value="查看详情">查看详情</option>
+						<option value="看啥">看啥啊看</option>
+						<option value="啥也没有">啥也没有</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="line">
+				<img src="ruler.png"alt="ruler"style="margin:0 12px;" height="15" width="19">
+				<span>选择尺寸</span>
+			</div>
+			<div class="row box">
+				<div class="col-12 col-xl-2">
+					<input id="ruler2" type="radio" name="ruler" />
+					<label for="ruler2">边径</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<span>长</span>
+					<input type="text" size="11">
+					<span>mm</span>
+				</div>
+				<div class="col-12 col-xl-2">
+					<span>宽</span>
+					<input type="text" size="11" maxlength="11">
+					<span>mm</span>
+				</div>
+				<div class="col-12 col-xl-2">
+					<span>高</span>
+					<input type="text" size="11" maxlength="11">
+					<span>mm</span>
+				</div>
+				<div class="col-12 col-xl-2"></div>
+				<div class="col-12 col-xl-2"></div>
+			</div>
+			<div class="row box">
+				<div class="col-12 col-xl-2">
+					<input id="ruler1" type="radio" name="ruler" />
+					<label for="ruler1">边径</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<span>长</span>
+					<input type="text" size="11">
+					<span>mm</span>
+				</div>
+				<div class="col-12 col-xl-2">
+					<span>宽</span>
+					<input type="text" size="11" maxlength="11">
+					<span>mm</span>
+				</div>
+				<div class="col-12 col-xl-2">
+					<span>高</span>
+					<input type="text" size="11" maxlength="11">
+					<span>mm</span>
+				</div>
+				<div class="col-12 col-xl-2"></div>
+				<div class="col-12 col-xl-2">
+					<select class="move_up">
+						<option value="查看详情">查看详情</option>
+						<option value="看啥">看啥啊看</option>
+						<option value="啥也没有">啥也没有</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="line">
+				<img src="shear.png"alt="shear"style="margin:0 12px;" height="15" width="19">
+				<span>选择材料</span>
+			</div>
+			<div class="row box">
+				<div class="col-12 col-xl-2">
+					<input id="materials1" type="radio" name="materials" />
+					<label for="materials1">三层A瓦优质</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<input id="materials2" type="radio" name="materials" />
+					<label for="materials2">三层A瓦优质</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<input id="materials3" type="radio" name="materials" />
+					<label for="materials3">三层A瓦优质</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<input id="materials4" type="radio" name="materials" />
+					<label for="materials4">三层A瓦优质</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<input id="materials5" type="radio" name="materials" />
+					<label for="materials5">三层A瓦优质</label>
+				</div>
+				<div class="col-12 col-xl-2">
+					<select>
+						<option value="查看详情">查看详情</option>
+						<option value="看啥">看啥啊看</option>
+						<option value="啥也没有">啥也没有</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row box" style="height: 15rem;">
+				<div class="next col-12">
+					<span>下一步</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</main>
+
+<footer>
+	<div class="container">
+		<div class="row" style="padding: 0 15px">
+			<div class="col-xl-4 col-12"  style="padding: 0">
+				<p><span>51包装网-纸箱包装首选服务平台</span></p>
+			</div>
+			<div class="col-xl-4 col-12" style="padding: 0">
+				<p><span>关于我们</span>
+				<span>配送流程</span>
+				<span>联系我们</span></p>
+				<p><span>下单指南</span>
+				<span>媒体介绍</span></p>
+			</div>
+			<div class="col-xl-2 col-12" style="padding: 0">
+				<p>TEl：400-00000-000</p>
+				<p>企业QQ：123456789</p>
+				<p>微信号：XXXXXX</p>
+			</div>
+			<div class="col-xl-2 col-12 erweima"  style="padding: 0">
+				<img src="erweima.png" alt="二维码">
+			</div>
+		</div>
+	</div>
+	<div class="end">
+		<span>北京五一包装科技有限公司Copyright ©2015</span>
+		<span>  51baozhuang.com015   All rights reserved.   京icp备99999999-1 </span>
+	</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

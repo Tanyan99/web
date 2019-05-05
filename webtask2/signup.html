@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SignUp</title>
+</head>
+
+<style>
+body{margin: 0;}
+.SignIn,.SignUp{color: red;}
+a{text-decoration: none;}
+a:hover{color: pink;}
+header{
+	background-color: #f7f7f7;
+	padding: 0 3vw 0 5vw;
+	display: flex;
+	justify-content: space-between;
+}
+.star{position: relative;top: 0.3vh;}
+#toppic{margin: 0vh 3vw 0 5vw;display: flex;justify-content: space-between;}
+.logo{width: 17vw;height: 10vh;}
+.banner{width:66vw;height:10vh;}
+#navigation{
+	font-size: 1.2rem;
+	background-color: #ce2626;
+	color: white;
+	width: 100vw;
+	padding: 0 20vw;
+	text-align: center;
+}
+#navigation a{color: white;}
+#navigation a:hover{color: pink;}
+footer{	
+	background-color: #efefef;
+	text-align: center;
+	padding-bottom: 10vh;
+}
+footer p{margin: 0;}
+
+
+main{background-color: #efefef;}
+#table{margin: 0 10vw;background-color: white;padding: 1% 2%;}
+.footer_pic img{width: 32.9%; vertical-align: middle;padding-top: 3vh;}
+.h{font-size: 1.2rem;}
+.zhuce_pic{}
+.zhuce_pic img{}
+.p{font-size: 0.7rem;color: gray;}
+input{font-size: 0.9rem;}
+</style>
+
+<body>
+
+<header>
+<div class="headerleft">
+	<span><img class="star" src="shopping/shop/images/star.jpg" alt="star">收藏 | HI，欢迎来订购！</span>
+	<span><a class="SignIn" href="#">[请登录]</a>  <a class="SignUp" href="SignUp.html">[免费注册]</a></span>
+</div>
+<div class="headerright">
+	<span>客户服务<img class="arrow" src="shopping/shop/images/arrow.gif" alt="arrow"></span>
+	<span>网站导航<img class="arrow" src="shopping/shop/images/arrow.gif" alt="arrow"></span>
+	<span><img class="shoppingcart" src="shopping/shop/images/shoppingcart.png" alt="shoppingcart">我的购物车0件<img class="arrow" src="shopping/shop/images/arrow.gif" alt="arrow"></span>
+</div>
+</header>
+
+<div id="toppic">
+	<img src="shopping/shop/images/logo.jpg" alt="logo" class="logo">
+	<img src="shopping/shop/images/banner.jpg" alt="banner" class="banner">
+</div>
+<table id="navigation">
+	<tr>
+		<td><a href="index.html">首页</a></td>
+		<td><a href="#">最新上架</a></td>
+		<td><a href="#">品牌活动</a></td>
+		<td><a href="#">原厂直供</a></td>
+		<td><a href="#">团购</a></td>
+		<td><a href="#">限时抢购</a></td>
+		<td><a href="#">促销打折</a></td>
+	</tr>
+</table>
+<main>
+	<table id="table">
+		<tr class="h"><th colspan="2">用户注册</th></tr>
+		<tr><td colspan="2"><hr/></td></tr>
+		<tr><td>用户名：</td><td><input name="username" type="text" placeholder="请输入用户名"></td><td class="zhuce_pic" rowspan="14"><img src="shopping/register/images/zhuce_pic.jpg" alt="pic"></td></tr>
+		<tr><td>邮箱地址：</td><td><input name="mail" type="text" placeholder="请输入邮箱地址"></td></tr>
+		<tr><td>设置密码：</td><td><input type="password" name="password"></td></tr>
+		<tr><td></td><td class="p">6-20个字符，由字母、数字和符号的两种以上组合。</td></tr>
+		<tr><td>确认密码：</td><td><input type="password" name="password"></td></tr>
+		<tr><td>用户名：</td><td><input name="name" type="text" placeholder="请输入真实姓名"></td></tr>
+		<tr><td>你的性别：</td><td><input name="sex" type="radio" value="man">男 <input name="sex" type="radio" value="women">女</td></tr>
+		<tr><td>上传头像</td><td><input type="file"></td></tr>
+		<tr><td>您的手机：</td><td><input name="phonenumber" type="text" placeholder="请输入您的手机号码" maxlength="11"></td></tr>
+		<tr><td>用户名：</td><td><input name="companyname" type="text" placeholder="请输入单位名称"></td></tr>
+		<tr><td>单位地址：</td><td>
+			<select>
+				<option value="1">-请选择省份-</option>
+				<option value="2">湖南</option>
+			</select>
+			<select>
+				<option value="1">-请选择城市-</option>
+				<option value="2">娄底</option>
+			</select>
+			<select>
+				<option value="1">-请选择区-</option>
+				<option value="2">娄星区</option>
+			</select>
+		</td></tr>
+		<tr><td></td><td><input name="address" type="text" placeholder="请输入街道地址"></td></tr>
+		<tr><td>您的爱好：</td><td><input name="hobby1" type="checkbox" value="shop">购物 <input name="hobby2" type="checkbox" value="movie">影视 <input name="hobby3" type="checkbox" value="food">餐饮 </td></tr>
+		<tr><td>协议内容：</td><td><textarea name="agreement" id="" cols="40" rows="5"></textarea></td></tr>
+		<tr><td></td><td><input name="submit" type="submit" value="提交"></td></tr>
+		<tr><td colspan="3" class="footer_pic"><img src="shopping/register/images/shop.jpg" alt="shop">
+		<img src="shopping/register/images/movie.jpg" alt="movie">
+		<img src="shopping/register/images/food.jpg" alt="food"></td></tr>
+	</table>
+
+</main>
+<footer>
+	<p>Copyright 2015-2020 Q- Walking Fashion E$S 漫步时尚广场（QST教育）版权所有</p>
+	<p>中国青岛 高新区河东路8888号 青软教育集团 咨询热钱：400-658-0166 400-658-1022</p>
+	<img src="shopping/shop/images/foot_pic.jpg" alt="foot_pic">
+</footer>
+
+</body>
+</html>
