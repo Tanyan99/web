@@ -131,12 +131,14 @@ input[type="radio"]{
 	position: absolute;
 	clip: rect(0,0,0,0);
 }
+input{outline: none;}
 select{
 	-webkit-appearance:none;
 	padding-right: 25px;
 	background-image: url(jiantou.png);
 	background-repeat: no-repeat;
 	background-position: 65px 0;
+	outline: none;
 }
 .box{ padding: 0 15px; }
 .box div{text-align: center;margin: 12px 0;}
@@ -168,6 +170,7 @@ footer{padding-top: 25px;}
 	background-color: #1d7ad9;
 }
 .underline span:hover{border-bottom: 1px solid black;}
+
 </style>
 <body>
 <header>
@@ -282,7 +285,7 @@ footer{padding-top: 25px;}
 				</div>
 				<div class="col-12 col-xl-2">
 					<span>长</span>
-					<input type="text" size="11">
+					<input type="text" size="11" maxlength="11">
 					<span>mm</span>
 				</div>
 				<div class="col-12 col-xl-2">
