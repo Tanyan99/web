@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>navigation</title>
+	<style>
+		ul{padding: 0;}
+		ul li{
+			list-style: none;
+			width: 100px;
+			background-color: red;
+			text-align: center;
+			color: white;
+			margin: 2px;
+			border: 1px solid black;
+		}
+		.nav1 li{float: left;}
+		.nav2 li{width: 95px;}
+		.nav2 , .nav3{ display: none;}
+		#l1:hover  .nav2{display: block;}
+
+		.nav3{position: absolute;
+			left: 112px;
+			top: 68px;
+			width: 100px;
+			background-color: red;
+			border: 1px solid black;
+		}
+		#ll1:hover  .nav3{display: block;}
+	</style>
+</head>
+<body>
+
+		<ul class="nav1">
+			<li id="l1">首页
+				<ul class="nav2">
+					<li>1</li>
+					<li id="ll1">2
+						<ul class="nav3">
+							<li>1</li>
+							<li>2</li>
+						</ul>
+					</li>
+					<li>3</li>
+				</ul>
+			</li>
+			<li>最新上架</li>
+			<li>品牌活动</li>
+			<li>原厂直供</li>
+			<li>团购</li>
+			<li>限时抢购</li>
+			<li>促销打折</li>
+		</ul>
+
+</body>
+</html>
