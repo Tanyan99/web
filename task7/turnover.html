@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Killer Game - Turnover</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<style type="text/css">
+		body{
+			background-color: #29bde0;
+			margin: 0;
+			text-align: center;		}
+		#btn1,#btn2{
+			margin: 0 3vw;
+			height: 1.5rem;
+		}
+		.title{
+			color: white;
+			font-size: 1.2rem;
+		}
+		#header{
+			color: white;
+			height: 8vh;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid #74d4eb;
+		}
+		.center{
+			width: 70%;
+			background-color: #ffedc5;
+			height: 60vh;
+			margin: 5vh 0 3vh 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			border: 2px solid white;
+		}
+		#content{
+			display: flex;
+			justify-content: center;
+		}
+		.No{
+			background: white;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: red;
+			font-size: 1.4rem;
+			position: relative;
+			top: -25%;
+		}
+
+		button{
+			background-color: #fbb435;
+			color: white;
+			font-size: 1.4rem;
+			padding: 1vh 0;
+			width: 70%;
+		}
+		button:focus{outline: none;}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<img src="images/Back _ Icon.png" alt="name" id="btn1">
+		<span class="title">查看身份</span>
+		<img src="images/exit.png" alt="" id="btn2">
+	</div>
+	<div id="content">
+		<div class="center">
+			<div class="No">3</div>
+			<img src="images/turnover.png" alt="翻牌" style="height: 50%;">
+		</div>
+	</div>
+	<div id="btn">
+		<button>查看 3 号身份</button>
+	</div>
+	<script type="text/javascript">
+		var btn1 = document.getElementById('btn1');
+		console.log(btn1);
+		btn1.onclick = function (){
+			window.location.href = "seting.html";
+		}
+	</script>
+</body>
+</html>

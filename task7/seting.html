@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Killer Game - Seting</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/html.css">
+	<link rel="stylesheet" type="text/css" href="css/seting.css">
+	<style>
+		.shu{
+			background-color: #fab344;
+			height: 10px;
+			width: 2px;
+		}
+		.heng{
+			background-color: #fab344;
+			height: 2px;
+			width: 10px;
+		}
+		#down,#up,#btn{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid gray;
+			width: 15px;
+			height: 15px;
+		}
+		#up .shu{
+			position: absolute;
+		}
+		#btn .shu{
+			margin: 0 2px;
+		}
+		#btn{
+			background-color: white;
+			padding: 3px 15px;
+			border: 2px solid #fab344;
+			border-radius: 5px;
+			position: absolute;
+			left: 60%;
+		}
+		.pgbar{
+			height: 4px;
+			background-color: #fab344;
+			width: 80%;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<img src="images/Back _ Icon.png" alt="name" id="btn1">
+		<span class="title">参数设置</span>
+		<img src="images/circled-help.png" alt="" id="btn2">
+	</div>
+	<div id="content">
+		<div class="row" style="padding: 0;">
+			<div class="col" style="width: 20%;" >
+				<span class="onecn">玩家配比</span>
+			</div>
+			<div class="col" style="width: 80%;	border-left: 2px solid #f0f0f0;background-color: #fbfbfb;" >
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">杀手</span>
+							<span id="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">警察</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">狙击手</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">杀手</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">杀手</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">平民</span>
+							<span id="killer1">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">医生</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">杀手</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">杀手</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+						<div class="row">
+							<div class="dot"></div>
+							<span class="it">杀手</span>
+							<span class="killer0">0</span>
+							<span>人</span>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="row" style="border-top: 2px solid #f0f0f0;">
+					<a>
+						点击设置
+						<img src="images/pencil.png" alt="pencil">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="text">
+			<div><span>水民词组</span></div>
+			<div><span>幽灵词组</span></div>
+		</div>
+		<div class="set">
+			<div class="top">
+				<span>
+					玩家数量<input id="killer" type="text" maxlength="2">人
+				</span>
+			</div>
+			<div class="bott">
+				<div id="down">
+					<div class="heng"></div>
+				</div>
+				<div class="pgbar"></div>
+				<div id="btn">
+					<div class="shu"></div>
+					<div class="shu"></div>
+					<div class="shu"></div>
+				</div>
+				<div id="up">
+					<div class="heng"></div>
+					<div class="shu"></div>
+				</div>
+			</div>
+		</div>
+		<div id="btn3">
+			<button>去发牌</button>
+		</div>
+	</div>
+	<script src="js/seting.js"></script>
+</body>
+</html>

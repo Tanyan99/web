@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
-	<title>首页</title>
+	<title>Killer Game - 首页</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/html.css">
 </head>
 <style>
 
-body{
-	background-color: #f0f0f0;
-	margin: 0;
-}
+
 a{
 		text-decoration:none;
 }
@@ -19,9 +17,7 @@ a{
 		width: 50px;
 		background-image: url(sprite01.png);
 		background-position: 0px 0px;
-		position: relative;
-		left: 3vw;
-		top: 1vh;
+
 	}
 	.img2{
 		height: 20px;
@@ -30,7 +26,7 @@ a{
 		background-image: url(sprite01.png);
 		position: absolute;
 		right: 0;
-		padding-right: 2px;
+		padding-right: 10px;
 	}
 	.img3{
 		height: 34px;
@@ -38,29 +34,25 @@ a{
 		background-image: url(sprite01.png);
 		background-position: 0px -50px;
 		position: absolute;
-		top: 52vh;
-		right: 8vw;
+		top: 46vh;
+		right: 4vw;
 		padding-right: 2px;
 	}
 
-	.header{background-color: #29bde0;
-		height: 10vh;
-	}
+
 	.center{
 		color: #9a9a9a;
 		font-size: 1.3em;
 		display: flex;
 		background-color: white;
-		margin: 3vh 8vw;
+		margin: 2vh 3vw;
 		height: 9vh;
 		align-items: center;
 		border: 1px solid #9a9a9a;
 		justify-content: center;
 		position: relative;
 	}
-	.centen{
-		background-color: white;
-		margin: 0 8vw;
+	#content{
 		border: 1px solid #9a9a9a;
 		text-align: center;
 	}
@@ -94,25 +86,41 @@ a{
 	.dot:hover{background-color: #69d1e9;}
 </style>
 <body>
-	<div class="header">
+	<div id="header">
 		<div class="img1"></div>
 	</div>
 	<div class="center">
 		<span>上次游戏：狼人杀</span>
 		<div class="img2"></div>
 	</div>
-	<div class="centen">
+	<div id="content">
 		<p class="top">狼人杀</p>
-		<a href="task7.02.html"><div class="option">萌新局</div></a><p class="online">
-			有1133个用户正在玩此款游戏</p>
-		<div class="option">中端局</div><p class="online">
-			有1133个用户正在玩此款游戏</p>
-		<div class="option">高端局</div><p class="online">
-			有1133个用户正在玩此款游戏</p>
+		<div class="option" id="option1">萌新局</div>
+		<p class="online">
+			有1133个用户正在玩此款游戏
+		</p>
+		<div class="option"id="option2">中端局</div>
+		<p class="online">
+			有1133个用户正在玩此款游戏
+		</p>
+		<div class="option">高端局</div>
+		<p class="online">
+			有1133个用户正在玩此款游戏
+		</p>
 		<div class="img3"></div>
 		<div class="button">
 			<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		var option1 = document.getElementById('option1');
+		option1.onclick = function () {
+			window.location.href = "seting.html";
+		}
+		var option2 = document.getElementById('option2');
+		option2.onclick = function () {
+			window.location.href = "task7.02.html";
+		}
+	</script>
 </body>
 </html>

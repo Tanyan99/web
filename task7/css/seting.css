@@ -1,0 +1,101 @@
+
+
+#btn1,#btn2{
+	margin: 0 3vw;
+	height: 1.5rem;
+}
+.title{
+	color: white;
+	font-size: 1.2rem;
+}
+.col{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	text-align: center;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	padding: 1vh 1vw;
+	color: gray;
+}
+
+.onecn{
+     width: 20px;  
+    margin: 0 auto;  
+    line-height: 25px;  
+    font-size: 1.4rem;
+    color: black;
+}
+a{
+	color: #29bde0;
+}
+.dot{
+	width: 8px;
+    height: 8px;
+    background-color: #FF9800;
+    border-radius: 2px;
+}
+.it{
+	width: 48px;
+	height: 24px;
+	text-align: justify;
+}
+.it:after{
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+
+.text span{
+	font-size: 1.1rem;
+	color: gray;
+
+}
+.text div{
+	margin: 2vh 5vw;
+	border-bottom: 2px solid #f0f0f0;
+	text-align: left;
+	padding: 1.5vh 0;
+
+
+}
+.text{
+	padding-bottom: 2vh;
+	border-top: 1vh solid #f0f0f0;
+	border-bottom: 1vh solid #f0f0f0;
+}
+.top,.bott {
+	padding: 2vh 5vw;
+	text-align: left;
+}
+.bott{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.set{
+	border-bottom: 2vh solid #f0f0f0;
+}
+input{
+	width: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    background: #f4f5f5;
+    color: #fab344;
+    border: 0;
+    outline: none;
+    margin: 0 2vw;
+}
+
+button{
+	background-color: #fab344;
+	color: white;
+	font-size: 1.4rem;
+	padding: 1vh 0;
+	width: 100%;
+}
+button:focus{outline: none;}
