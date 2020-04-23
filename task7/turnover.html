@@ -50,8 +50,9 @@
 			align-items: center;
 			color: red;
 			font-size: 1.4rem;
-			position: relative;
-			top: -25%;
+			position: absolute;
+			top: 13vh;
+			transform: translateY(-50%);
 		}
 
 		button{
@@ -62,7 +63,12 @@
 			width: 70%;
 		}
 		button:focus{outline: none;}
-		#bianhao{}
+		#idcard{
+			margin: 4vh;
+			color: #29bde0;
+			font-size: 1.4rem;
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -74,11 +80,19 @@
 	<div id="content">
 		<div class="center">
 			<div id="No">1</div>
-			<img src="images/turnover.png" alt="翻牌" style="height: 50%;">
+			<img id="image" src="images/turnover.png" alt="翻牌" style="height: 50%;">
+			<img id="image0" src="images/turnover1.png" alt="翻牌" style="height: 50%; display: none;">
+			<span id="idcard">平民</span>
 		</div>
 	</div>
-	<div id="btn" onclick="i = dianji(arr,i)">
-		<button>查看 <span id="bianhao">1</span> 号身份</button>
+	<div id="btn">
+		<button>查看 <span id="bianhao0">1</span> 号身份</button>
+	</div>
+	<div id="btn0" style="display: none;">
+		<button>隐藏 <span id="bianhao">1</span> 号身份</button>
+	</div>
+	<div id="check" style="display: none;">
+		<button>法官查看</button>
 	</div>
 	<script type="text/javascript" src="js/turnover.js"></script>
 </body>

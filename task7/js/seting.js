@@ -27,7 +27,7 @@ btn3.onclick = function (){
 	temp = JSON.stringify(arr1)
 	window.sessionStorage.arr1 = temp ;
 
-	//window.location.href = "turnover.html";
+	window.location.href = "turnover.html";
 	
 }
 
