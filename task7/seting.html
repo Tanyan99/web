@@ -9,40 +9,51 @@
 	<style>
 		.shu{
 			background-color: #fab344;
-			height: 10px;
+			height: 2vw;
 			width: 2px;
 		}
 		.heng{
 			background-color: #fab344;
 			height: 2px;
-			width: 10px;
+			width: 2vw;
 		}
 		#down,#up,#btn{
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			border: 1px solid gray;
-			width: 15px;
-			height: 15px;
+			width: 2vw;
+			height: 2vw;
 		}
 		#up .shu{
 			position: absolute;
 		}
 		#btn .shu{
-			margin: 0 2px;
+			margin: 0 auto;
 		}
 		#btn{
 			background-color: white;
-			padding: 3px 15px;
+			padding: 1vh 2vw;
 			border: 2px solid #fab344;
 			border-radius: 5px;
 			position: absolute;
-			left: 60%;
+			left: 0;
+			transform: translateY(-50%);
+			/*opacity: 0.5;*/
 		}
-		.pgbar{
+		#pgbar{
 			height: 4px;
 			background-color: #fab344;
-			width: 80%;
+			width: 0px;
+			position: absolute;
+			left: 15vw;
+		}
+		#bgbar{
+			height: 4px;
+			background-color: #ffeac8;
+			width: 70vw;
+			position: absolute;
+			left: 15vw;
 		}
 	</style>
 </head>
@@ -63,7 +74,7 @@
 						<div class="row">
 							<div class="dot"></div>
 							<span class="it">杀手</span>
-							<span id="killer0">0</span>
+							<span id="killer0">1</span>
 							<span>人</span>
 						</div>
 						<div class="row">
@@ -95,7 +106,7 @@
 						<div class="row">
 							<div class="dot"></div>
 							<span class="it">平民</span>
-							<span id="killer1">0</span>
+							<span id="killer1">3</span>
 							<span>人</span>
 						</div>
 						<div class="row">
@@ -135,25 +146,22 @@
 			</div>
 		</div>
 		<div class="text">
-			<div><span>水民词组</span></div>
-			<div><span>幽灵词组</span></div>
+			<div><input type="text" placeholder="水民词组"></div>
+			<div><input type="text" placeholder="幽灵词组"></div>
 		</div>
 		<div class="set">
 			<div class="top">
 				<span>
-					玩家数量<input id="killer" type="text" maxlength="2">人
+					玩家数量<input id="killer" type="text" maxlength="2" value="4">人
 				</span>
 			</div>
 			<div class="bott">
-				<div id="down">
-					<div class="heng"></div>
+				<div id="down"><div class="heng"></div></div>
+				<div id="bgbar">
+					<div id="btn"><div class="shu"></div><div class="shu"></div><div class="shu"></div></div>
 				</div>
-				<div class="pgbar"></div>
-				<div id="btn">
-					<div class="shu"></div>
-					<div class="shu"></div>
-					<div class="shu"></div>
-				</div>
+				<div id="pgbar"></div>
+
 				<div id="up">
 					<div class="heng"></div>
 					<div class="shu"></div>

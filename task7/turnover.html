@@ -40,7 +40,7 @@
 			display: flex;
 			justify-content: center;
 		}
-		.No{
+		#No{
 			background: white;
 			width: 40px;
 			height: 40px;
@@ -62,6 +62,7 @@
 			width: 70%;
 		}
 		button:focus{outline: none;}
+		#bianhao{}
 	</style>
 </head>
 <body>
@@ -72,19 +73,13 @@
 	</div>
 	<div id="content">
 		<div class="center">
-			<div class="No">3</div>
+			<div id="No">1</div>
 			<img src="images/turnover.png" alt="翻牌" style="height: 50%;">
 		</div>
 	</div>
-	<div id="btn">
-		<button>查看 3 号身份</button>
+	<div id="btn" onclick="i = dianji(arr,i)">
+		<button>查看 <span id="bianhao">1</span> 号身份</button>
 	</div>
-	<script type="text/javascript">
-		var btn1 = document.getElementById('btn1');
-		console.log(btn1);
-		btn1.onclick = function (){
-			window.location.href = "seting.html";
-		}
-	</script>
+	<script type="text/javascript" src="js/turnover.js"></script>
 </body>
 </html>

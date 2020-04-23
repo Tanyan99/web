@@ -50,9 +50,12 @@ a{
 	width: 100%;
 }
 
-.text span{
+.text input{
 	font-size: 1.1rem;
 	color: gray;
+	width: auto;
+	background-color: white;
+	text-align: left;
 
 }
 .text div{
