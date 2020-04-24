@@ -100,5 +100,7 @@ button{
 	font-size: 1.4rem;
 	padding: 1vh 0;
 	width: 100%;
+	outline: none;
+	border: 1px solid white;
 }
 button:focus{outline: none;}

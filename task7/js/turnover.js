@@ -1,6 +1,9 @@
 btn1.onclick = function (){
 	window.location.href = "seting.html";
 }
+check.onclick = function(){
+	window.location.href = "check.html";
+}
 function getsession(arr,arr1) {
 	var temp = sessionStorage.arr;
 	var arr = JSON.parse(temp);
@@ -12,9 +15,9 @@ function getsession(arr,arr1) {
 }
 
 window.onload = function (){
-	var fanhui = getsession(arr,arr1);
-	var arr = fanhui[0];
-	var arr1 = fanhui[1];
+	var temp = getsession(arr,arr1);
+	var arr = temp[0];
+	var arr1 = temp[1];
 	var i=0;
 	document.getElementById('btn').addEventListener("click",function () {
 		//显示和隐藏按钮

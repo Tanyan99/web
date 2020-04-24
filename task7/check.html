@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Killer Game - Check</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<style type="text/css">
+		body{
+			background-color: #29bde0;
+			margin: 0;
+			text-align: center;		}
+		#btn1,#btn2{
+			margin: 0 3vw;
+			height: 1.5rem;
+		}
+		.title{
+			color: white;
+			font-size: 1.2rem;
+		}
+		#header{
+			color: white;
+			height: 8vh;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid #74d4eb;
+		}
+		#content{
+			margin: 5vh 0 15vh 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		.identity{
+			width: 22vw;
+			height: 22vw;
+			border: 2px solid white;
+			background-color: #ffedc5;
+			margin: 0% 5vw 5vh 5vw;
+		}
+		#idcard{
+			height: 16vw;
+			color: white;
+			font-size: 1.4rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#No{
+			background: #83b09a;
+			height: 6vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 1.4rem;
+		}
+
+		button{
+			background-color: #fbb435;
+			color: white;
+			font-size: 1.4rem;
+			padding: 1vh 0;
+			width: 70vw;
+		}
+		button:focus{outline: none;}
+
+		#btn{
+			background-color: #29bde0;
+			position: fixed;
+			bottom: 0;
+			width: 100vw;
+			padding: 3vh 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<img src="images/Back _ Icon.png" alt="name" id="btn1">
+		<span class="title">法官日记</span>
+		<img src="images/exit.png" alt="" id="btn2">
+	</div>
+	<div id ="content">
+		<div id="identity" class="identity">
+			<span id="idcard">平民</span>
+			<div id="No">1</div>
+		</div>
+
+	</div>
+
+
+	<div id="btn">
+		<button>开始游戏</button>
+	</div>
+	<script type="text/javascript" src="js/check.js"></script>
+</body>
+</html>

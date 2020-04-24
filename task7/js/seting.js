@@ -1,7 +1,7 @@
 //display();
 
 btn1.onclick = function (){
-	window.location.href = "task7.html";
+	window.location.href = "index.html";
 }
 
 btn3.onclick = function (){
@@ -36,7 +36,7 @@ btn3.onclick = function (){
 		if(text.value ===""){text.focus();}
 		else{text1.focus();}
 	}			
-	//else{window.location.href = "turnover.html";}
+	else{window.location.href = "turnover.html";}
 }
 
 //回车点击btn3
