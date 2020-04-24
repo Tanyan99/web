@@ -5,7 +5,6 @@ btn1.onclick = function (){
 }
 
 btn3.onclick = function (){
-
 	//创建人员配比arr数组:0-killer,1-杀手,2-平民
 	var arr = createArr();
 	console.log(arr);
@@ -13,6 +12,7 @@ btn3.onclick = function (){
 		alert("请输入4-18之间的数字")
 		console.log("false!");
 		document.getElementById("killer").value = "";
+		document.getElementById("killer").focus();
 		return "flase";
 	}
 	else{show(arr);}
@@ -27,8 +27,16 @@ btn3.onclick = function (){
 	temp = JSON.stringify(arr1)
 	window.sessionStorage.arr1 = temp ;
 
-	window.location.href = "turnover.html";
-	
+	//判断输入框是否为空
+	var text = document.getElementById('text');
+	var text1 = document.getElementById('text1');
+	if(text.value === "" || text1.value === "" ){
+		console.log("flase");
+		alert("输入不能为空！");
+		if(text.value ===""){text.focus();}
+		else{text1.focus();}
+	}			
+	//else{window.location.href = "turnover.html";}
 }
 
 //回车点击btn3
@@ -80,7 +88,6 @@ function createArr(){
 }
 function duqu() {
 		var killer = document.getElementById("killer").value-0;
-		console.log(killer);
 		return killer;
 	}
 function peibi(arr,killer) {
@@ -95,26 +102,16 @@ function show(arr) {
 		killer1.style.color = "orange";
 }
 
-//实时显示人员配比
-/*function display() {
-	setInterval(function () {
-		var arr = createArr();
-		var arr0 = ['0','0','0'];
-		if(arr !== 0){
-			show(arr);
-		}
-		else{show(arr0);}
-	}, 500 );
-}*/
 
-window.onload = function dragSlide() {
-	var lineDiv = document.getElementById('bgbar'); //长线条          
+window.onload = function dragSlide(){
+	var lineDiv = document.getElementById('bgbar'); //长线条
 	var minDiv = document.getElementById('btn'); //小方块
 	var btndown = document.getElementById('down');//减1功能键
 	var btnup = document.getElementById('up');//加1功能键
-	var width = parseInt(minDiv.offsetWidth); 
+	var width = minDiv.offsetWidth; 
 	//小方块的宽度  	
 	var lineDiv0 = document.getElementById('pgbar');
+	var one = (lineDiv.offsetWidth-width)/14;//一格的长度
 	//var msg = document.getElementById("msg");
 	var vals;
 
@@ -124,54 +121,51 @@ window.onload = function dragSlide() {
 	var start = function(e) {
 		e.stopPropagation();
 		ifBool = true;
-		console.log("鼠标按下")
+		//console.log("鼠标按下")
 	}
 
 	var move = function(e) {
-		console.log("鼠标拖动")
+		//console.log("鼠标拖动")
 		if(ifBool){
 			if(!e.touches) {    //兼容移动端
 				var x = e.clientX;
 			} else {     //兼容PC端
 				var x = e.touches[0].pageX;
 			}
-		}
-		//var x = e.touches[0].pageX || e.clientX; //鼠标横坐标var x
-		var lineDiv_left = getPosition(lineDiv).left; 
-		//长线条的横坐标
-		var minDiv_left = x - lineDiv_left;
-		//小方块相对于父元素（长线条）的left值
-		if(minDiv_left >= lineDiv.offsetWidth - width) {
-			minDiv_left = lineDiv.offsetWidth - width;
-		}
-		if(minDiv_left < 0) {
-			minDiv_left = 0;
-		}
-		//if()
-		//设置拖动后小方块的left值
-		minDiv.style.left = minDiv_left + "px";
-		//拖动过的进度条长度
-		lineDiv0.style.width = minDiv.style.left;
+		
+			//var x = e.touches[0].pageX || e.clientX; //鼠标横坐标var x
+			var lineDiv_left = getPosition(lineDiv).left; 
+			//长线条的横坐标
+			var minDiv_left = x - lineDiv_left;
+			//小方块相对于父元素（长线条）的left值
+			if(minDiv_left >= lineDiv.offsetWidth - width) {
+				minDiv_left = lineDiv.offsetWidth - width;
+			}
+			if(minDiv_left < 0) {
+				minDiv_left = 0;
+			}
+			//设置拖动后小方块的left值
+			minDiv.style.left = minDiv_left + "px";
+			//拖动过的进度条长度
+			lineDiv0.style.width = minDiv.style.left;
 
-		//percent百分比改为如下所示,解决开始和最后滑动的体验不好问题                 
-		var percent = (minDiv_left / (lineDiv.offsetWidth - width)) * 14;
-		if (percent > 0 && percent < 1) {
-			percent = Math.ceil(percent);
-		}
-		else {
-			percent = Math.floor(percent);
-		}
-		vals = percent+4;
-		if(vals){
-			document.getElementById('killer').value = vals;
-			var arr = new Array();
-			peibi(arr , vals);
-			show(arr);
+			//percent百分比改为如下所示,解决开始和最后滑动的体验不好问题                 
+			var percent = (minDiv_left / (lineDiv.offsetWidth - width)) * 14;
+			if (percent > 0 && percent < 1) {
+				percent = Math.ceil(percent);
+			}
+			else {
+				percent = Math.floor(percent);
+			}
+			vals = percent+4;
+			if(vals){
+				document.getElementById('killer').value = vals;
+			}
 		}
 	}
 	//减1
 	var down = function (e) {
-		console.log("减1");
+		console.log("减");
 		var one = parseInt((lineDiv.offsetWidth-width)/14);//一格的长度
 		var minDiv_left = getPosition(minDiv).left - getPosition(lineDiv).left;
 		//小方块相对小长条的left值
@@ -187,21 +181,20 @@ window.onload = function dragSlide() {
 		if(minDiv_left < width/2) {
 			minDiv_left = 0;
 			vals = 4 ;
+			console.log("false");
+			alert("最小值为4！");
 		}
 		//设置拖动后小方块的left值和拖过的小长条长度
 		minDiv.style.left = minDiv_left + "px";
 		lineDiv0.style.width = minDiv.style.left;
 
 		document.getElementById('killer').value = vals;
-		var arr = new Array();
-		peibi(arr , vals);
-		show(arr);
 	}
 
 	//加1
 	var up = function (e) {
-		console.log("加1");
-		var one = (lineDiv.offsetWidth-width)/14;//一格的长度
+		console.log("增");
+		
 		var minDiv_left = getPosition(minDiv).left - getPosition(lineDiv).left;
 		//小方块相对小长条的left值
 		minDiv_left += one;
@@ -216,19 +209,18 @@ window.onload = function dragSlide() {
 		if(minDiv_left >= lineDiv.offsetWidth - width) {
 			minDiv_left = lineDiv.offsetWidth - width;
 			vals = 18;
+			console.log("false");
+			alert("最大值为18！");
 		}
 		//设置拖动后小方块的left值和拖过的小长条长度
 		minDiv.style.left = minDiv_left + "px";
 		lineDiv0.style.width = minDiv.style.left;
 
 		document.getElementById('killer').value = vals;
-		var arr = new Array();
-		peibi(arr , vals);
-		show(arr);
 	}
 
 	var end = function(e) {
-		console.log("鼠标弹起")
+		//console.log("鼠标弹起")
 		ifBool = false;
 	}
 
@@ -265,6 +257,26 @@ window.onload = function dragSlide() {
 	window.addEventListener("touchend", end);
 	window.addEventListener("mouseup", end);
 	
+	//实时监控显示
+	setInterval(function () {
+		var arr = createArr();
+		var arr0 = ['0','0','0'];
+		if (!vals) {vals=4;}
+		if(vals){
+			if (arr[0]>vals) {
+				for(var i = arr[0]-vals;i>0;i--){
+					up();
+				}
+			}
+			if (arr[0]<vals) {
+				for(var i = vals-arr[0];i>0;i--){
+					down();
+				}
+			}
+			else {show(arr);}
+		}
+		else{show(arr0);}
+	}, 100 );
 }
 
 //取消移动端手势长按弹出提示框的操作

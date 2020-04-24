@@ -21,9 +21,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			border: 1px solid gray;
+			border: 1px solid #fab344;
 			width: 2vw;
 			height: 2vw;
+			border-radius: 10%;
+			padding: 0.5vh;
 		}
 		#up .shu{
 			position: absolute;
@@ -35,7 +37,7 @@
 			background-color: white;
 			padding: 1vh 2vw;
 			border: 2px solid #fab344;
-			border-radius: 5px;
+			/*border-radius: 5px;*/
 			position: absolute;
 			left: 0;
 			transform: translateY(-50%);
@@ -70,67 +72,19 @@
 			</div>
 			<div class="col" style="width: 80%;	border-left: 2px solid #f0f0f0;background-color: #fbfbfb;" >
 				<div class="row">
-					<div class="col">
+					<div class="col" style="height: 30vh;">
 						<div class="row">
 							<div class="dot"></div>
 							<span class="it">杀手</span>
 							<span id="killer0">1</span>
 							<span>人</span>
 						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">警察</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">狙击手</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">杀手</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">杀手</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
 					</div>
-					<div class="col">
+					<div class="col" style="height: 30vh;">
 						<div class="row">
 							<div class="dot"></div>
 							<span class="it">平民</span>
 							<span id="killer1">3</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">医生</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">杀手</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">杀手</span>
-							<span class="killer0">0</span>
-							<span>人</span>
-						</div>
-						<div class="row">
-							<div class="dot"></div>
-							<span class="it">杀手</span>
-							<span class="killer0">0</span>
 							<span>人</span>
 						</div>
 					</div>
@@ -146,8 +100,12 @@
 			</div>
 		</div>
 		<div class="text">
-			<div><input type="text" placeholder="水民词组"></div>
-			<div><input type="text" placeholder="幽灵词组"></div>
+			<div>
+				<input id="text" type="text" placeholder="请输入杀手名称" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"/>
+			</div>
+			<div>
+				<input id="text1" type="text" placeholder="请输入平民名称" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"/>
+			</div>
 		</div>
 		<div class="set">
 			<div class="top">
