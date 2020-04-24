@@ -262,13 +262,13 @@ window.onload = function dragSlide(){
 		var arr = createArr();
 		var arr0 = ['0','0','0'];
 		if (!vals) {vals=4;}
-		if(vals){
+		if(arr[0]>=4&&arr[0]<=18){
 			if (arr[0]>vals) {
 				for(var i = arr[0]-vals;i>0;i--){
 					up();
 				}
 			}
-			if (arr[0]<vals) {
+			else if (arr[0]<vals) {
 				for(var i = vals-arr[0];i>0;i--){
 					down();
 				}
