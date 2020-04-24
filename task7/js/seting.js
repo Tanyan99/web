@@ -117,6 +117,7 @@ window.onload = function dragSlide(){
 
 	 //= document.getElementById("killer");
 	var ifBool = false; //判断鼠标是否按下
+		var bool = 0;
 
 	var start = function(e) {
 		e.stopPropagation();
@@ -169,6 +170,7 @@ window.onload = function dragSlide(){
 		var one = parseInt((lineDiv.offsetWidth-width)/14);//一格的长度
 		var minDiv_left = getPosition(minDiv).left - getPosition(lineDiv).left;
 		//小方块相对小长条的left值
+		if (minDiv_left == 0) {bool=1;}
 		minDiv_left -= one;
 		var percent = (minDiv_left / (lineDiv.offsetWidth - width)) * 14;
 		if (percent > 0 && percent < 0.5) {
@@ -180,23 +182,28 @@ window.onload = function dragSlide(){
 		vals = percent+4;
 		if(minDiv_left < width/2) {
 			minDiv_left = 0;
-			vals = 4 ;
-			console.log("false");
-			alert("最小值为4！");
+			vals = 4;
+			bool++;
+			console.log(bool);
 		}
 		//设置拖动后小方块的left值和拖过的小长条长度
 		minDiv.style.left = minDiv_left + "px";
 		lineDiv0.style.width = minDiv.style.left;
 
 		document.getElementById('killer').value = vals;
+		if (bool == 2) {
+			console.log("false");
+			alert("最小值为4！");
+			bool = 0;
+		}
 	}
 
 	//加1
 	var up = function (e) {
 		console.log("增");
-		
 		var minDiv_left = getPosition(minDiv).left - getPosition(lineDiv).left;
 		//小方块相对小长条的left值
+		if(minDiv_left == lineDiv.offsetWidth - width) {bool=1;}
 		minDiv_left += one;
 		var percent = (minDiv_left / (lineDiv.offsetWidth - width)) * 14;
 		if (percent > 0 && percent < 0.5) {
@@ -209,14 +216,19 @@ window.onload = function dragSlide(){
 		if(minDiv_left >= lineDiv.offsetWidth - width) {
 			minDiv_left = lineDiv.offsetWidth - width;
 			vals = 18;
-			console.log("false");
-			alert("最大值为18！");
+			bool ++;
+			console.log(bool);
 		}
 		//设置拖动后小方块的left值和拖过的小长条长度
 		minDiv.style.left = minDiv_left + "px";
 		lineDiv0.style.width = minDiv.style.left;
 
 		document.getElementById('killer').value = vals;
+		if (bool == 2) {
+			console.log("false");
+			alert("最大值为18！");
+			bool = 0;
+		}
 	}
 
 	var end = function(e) {
