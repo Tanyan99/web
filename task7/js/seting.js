@@ -173,14 +173,14 @@ window.onload = function dragSlide(){
 		if (minDiv_left == 0) {bool=1;}
 		minDiv_left -= one;
 		var percent = (minDiv_left / (lineDiv.offsetWidth - width)) * 14;
-		if (percent > 0 && percent < 0.5) {
-			percent = Math.ceil(percent);
+		if (percent > 0 && percent < 1) {
+			percent = percent;
 		}
 		else {
 			percent = Math.floor(percent);
 		}
 		vals = percent+4;
-		if(minDiv_left < width/2) {
+		if(vals<5) {
 			minDiv_left = 0;
 			vals = 4;
 			bool++;
@@ -194,8 +194,8 @@ window.onload = function dragSlide(){
 		if (bool == 2) {
 			console.log("false");
 			alert("最小值为4！");
-			bool = 0;
 		}
+		bool = 0;
 	}
 
 	//加1
@@ -227,8 +227,8 @@ window.onload = function dragSlide(){
 		if (bool == 2) {
 			console.log("false");
 			alert("最大值为18！");
-			bool = 0;
 		}
+		bool = 0;
 	}
 
 	var end = function(e) {
