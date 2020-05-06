@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Killer Game - Killing</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+	<style>
+		body{margin: 0; background-color: #29bde0;}
+		#btn1{
+			height: 32px;
+			width: 31px;
+			background-image: url(images/sprite02.png);
+			background-position: 0px 0px;
+			margin-left: 3vw;
+		}
+		#btn2{
+			height: 29px;
+			width: 29px;
+			background-image: url(images/sprite02.png);
+			background-position: -50px 0px;
+			margin-right: 3vw;
+		}
+		.playpic{
+			height: 37px;
+			width: 37px;
+			margin-right: 1vw;
+			background-image: url(images/sprite02.png);
+			background-position: -98px 0px;
+			border-radius: 50%;
+			background-color: #fbb435;
+		}
+		.down{
+			height: 15px;
+			width: 15px;
+			background-image: url(images/sprite02.png);
+			background-position: -150px 0px;
+			margin-left: 5vw;
+		}
+		#header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1.2rem;
+			color: white;
+			height: 8vh;
+			background-color: #29bde0;
+			position: fixed;
+			top: 0;
+			width: 100vw;
+			border-bottom: 1px solid #74d4eb;
+			z-index: 1;
+		}
+		.play{
+			height: 8vh;
+			background: rgba(255,255,255,0.67);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 11vh;
+		}
+		.text1{
+			display: inline-block;
+			margin-left: 4vw;
+			font-size: 0.9rem;
+		}
+		.text2{
+			display: block;
+			margin-left: 5vw;
+			color: white;
+			font-size: 0.8rem;
+			margin-bottom: 6%;
+		}
+		.identity{
+			width: 22vw;
+			height: 22vw;
+			background-color: #f5c97b;
+			border: 2px solid white;
+			text-align: center;
+			margin: 0 5vw 10vh;
+			position: relative;
+		}
+		#identity{
+			display: none;
+		}
+		.idcard{
+			height: 16vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.No{
+			height: 6vw;
+			background: rgb(26,153,183,0.52);
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#id{
+			display: flex;
+			flex-wrap: wrap;
+			margin: 5vh 0 15vh 0;
+		}
+		.kill{
+			display: none;
+			width: 22vw;
+		}
+		.identity:hover .kill{
+			display: block;
+		}
+		.mp3{
+		    position: absolute;
+		    right: 0%;
+		    opacity: 0;
+		    width: 100px;
+		    transform: rotate(180deg);
+		}
+
+		button{
+			background-color: #fbb435;
+			color: white;
+			font-size: 1.4rem;
+			padding: 1vh 0;
+			width: 70vw;
+			border: 1px solid white;
+		}
+		button:focus{outline: none;}
+		#btn{
+			background-color: #29bde0;
+			position: fixed;
+			bottom: 0;
+			width: 100vw;
+			padding: 3vh 0;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div id="btn1"></div>
+		<span>杀人或投票</span>
+		<div id="btn2"></div>
+	</div>
+	<div id="content">
+		<div class="play">
+			<span class="text1">杀手请睁眼选择要杀的对象<br/>或者投票选择出局对象</span>
+
+			<div class="playpic"></div>
+			<audio class="mp3" src="wudi.mov" controls preload></audio>
+		</div>
+		<div class="down"></div>
+		<span class="text2">点击下方玩家头像，对被杀的玩家进行标记
+		</span>
+
+		<div id="id">
+			<div id="identity" class="identity">
+				<span class="idcard">平民</span>
+				<span class="No">1号</span>
+				<image class="kill" src="images/sprite02.1.png"/>
+			</div>
+		</div>
+	</div>
+	<div id="btn">
+		<button>确定</button>
+	</div>
+	<script type="text/javascript" src="js/killing.js"></script>
+</body>
+</html>

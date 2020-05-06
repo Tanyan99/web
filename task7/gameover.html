@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>结束</title>
+	<title>Killer Game - GameOver</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 </head>
 <style>
@@ -73,14 +73,14 @@
 </style>
 <body>
 	<div class="top">
-		<a href="task7.html"><img class="left" src="03left.png" alt="主页"></a>
+		<a href="index.html"><img class="left" src="images/03left.png" alt="主页"></a>
 		<span class="text1">游戏结果</span>
-		<img class="right" src="03right.png" alt="关于">
+		<img class="right" src="images/03right.png" alt="关于">
 	</div>
 	<main>
 	<div class="center">
 		<div class="text2">
-			<img class="winpic" src="03win.png" alt="卧底胜利">
+			<img class="winpic" src="images/03win.png" alt="卧底胜利">
 			<p>太棒了！你知道吗？在狼人杀游戏中只有20%的狼人取得最终的胜利哦</p>
 		</div>
 		<div class="text3">
@@ -117,7 +117,12 @@
 		<div class="blank"></div>
 	</div>
 	</main>
-	<a href="task7.html"><div class="footerlf">再来一局</div></a>
+	<a><div class="footerlf" id="again">再来一局</div></a>
 	<div class="footerrg">上传并分享</div>
+	<script type="text/javascript">
+		document.getElementById('again').onclick = function () {
+			window.location.href = "seting.html";
+		}
+	</script>
 </body>
 </html>

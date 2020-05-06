@@ -2,6 +2,9 @@
 btn1.onclick = function (){
 window.location.href = "turnover.html";
 }
+btn.onclick = function (){
+window.location.href = "flow.html";
+}
 function getsession(arr,arr1) {
 	var temp = sessionStorage.arr;
 	var arr = JSON.parse(temp);

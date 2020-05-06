@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Killer Game - Flow</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+	<style>
+		body{
+			background-color: #f0f0f0;
+			margin: 0;
+		}
+		/*header*/
+		#header{
+			background-color: #29bde0;
+			color: white;
+			height: 8vh;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		#btn1,#btn2{
+			margin: 0 3vw;
+			height: 1.5rem;
+		}
+		.title{
+			color: white;
+			font-size: 1.2rem;
+		}
+
+		/*content  24a7c6*/
+		#content{
+			margin: 2vh 3vw 15vh 3vw;
+		}
+		.days{
+			color: #29bde0;
+			padding: 1.5vh 0;
+			font-size: 1.1rem;
+			border: 1px solid #c9c9c9;
+			text-align: center;
+			background-color: white;
+			margin-bottom: 1vh;
+		}
+		
+		#flowchart::before{
+			content: "";
+			width: 0;
+			height: 0;
+			border: 2vh solid;
+			border-color: transparent transparent white transparent;
+			position: absolute;
+			top: -3.5vh;
+		}
+
+		#flowchart{
+			background-color: white;
+			display: flex;
+			justify-content: space-around;
+			border: 1px solid #c9c9c9;
+			margin-top: 1vh;
+			padding: 5vh 0;
+			position: relative;
+		}
+		.text button{
+			width: 55vw;
+			height: 6vh;
+			background-color: #24a7c6;
+			color: white;
+			font-size: 1rem;
+			margin-bottom: 3vh;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    position: relative;
+		    padding: 0;
+		    border: 0;
+		}
+		.text div{
+
+			width: 0;
+			height: 0;
+			border-top: 2vh solid transparent;
+			border-right: 5vh solid #24a7c6;
+			border-bottom: 2vh solid transparent;
+			position: absolute;
+			left: -4vh
+		}
+		.bar{
+			width: 0;
+			height: 32vh;
+			border: 1px solid  #c9c9c9;
+			position: relative;
+		}
+		.sun,.moon{
+			width: 6vh;
+			height: 6vh;
+			background: white;
+			border: 1px solid #c9c9c9;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			transform: translateX(-50%);
+		}
+		.sun{top: 9vh;}
+		.moon{top: -1px;}
+		.pic img{height: 4vh}
+		.pic{padding: 0 3vh;margin-left: 3vw;}
+
+
+		/* bottom*/
+		#btn button{
+			background-color: #fab344;
+			color: white;
+			font-size: 1.2rem;
+			padding: 1.5vh 0;
+			width: 45vw;
+			outline: none;
+			border: 1px solid white;
+			border-radius: 10px;
+		}
+		button:focus{outline: none;}
+		#btn{
+			width: 100vw;
+			display: flex;
+			justify-content: space-around;
+			position: fixed;
+			bottom: 0;
+			padding: 3vh 0;
+		}
+		#btn::after{
+			content: "";
+			width: 100vw;
+			height: 14vh;
+			position: fixed;
+			bottom: 0;
+			background-color: #29bde0;
+			opacity: 0.5;
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<img src="images/Back _ Icon.png" alt="" id="btn1">
+		<span class="title">法官台本</span>
+		<img src="images/exit.png" alt="" id="btn2">
+	</div>
+	<div id="content">
+		<div id="day1" class="days">
+			<span>第1天</span>
+		</div>
+		<div id="flowchart">
+			<div class="pic">
+				<div class="bar">
+					<div class="moon">
+						<img src="images/moon.png" alt="moon">
+					</div>
+					<div class="sun">
+						<img src="images/sun.png" alt="sun">
+					</div>
+				</div>
+			</div>
+			<div class="text">
+				<button id="killing"><div></div>杀手杀人</button>
+				<button id="lastWords"><div></div>亡者发表遗言</button>
+				<button id="speak"><div></div>玩家依次发言</button>
+				<button id="vote" style="margin: 0;"><div></div>全民投票</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="btn">
+		<button>结束游戏</button>
+		<button>法官日志</button>
+	</div>
+	<script type="text/javascript" src="js/flow.js"></script>
+
+</body>
+</html>
