@@ -1,6 +1,9 @@
 btn1.onclick = function (){
 	window.location.href = "seting.html";
 }
+btn2.onclick = function (){
+	window.location.href = "check.html";
+}
 check.onclick = function(){
 	window.location.href = "check.html";
 }

@@ -1,20 +1,23 @@
 $(document).ready(function() {
-	$("#btn1").click(function() {
-		//window.close();
+	/*$("#btn1").click(function() {
 		window.location.href = "flow.html" ;
-	});
+	});*/
+	
+
 	var temp = getSession();
 	var arr = temp[0];
-	var arr1 = temp[1];
+	var arr0 = temp[1];
+	var arr1 = temp[2];
 	var dead = detection(arr1);
 	
-	display(arr,arr1);
+	display(arr,arr0,arr1);
 	killing(arr,arr1);
+
 	$("#btn").click(function() {
 		var dead0 = detection(arr1);
 		if (dead0 == dead +1) {
+			logData(arr1);
 			setSession(arr,arr1);
-			//window.close();
 			window.location.href = "flow.html" ;
 		}
 		else if (dead0 == dead) {
@@ -26,7 +29,7 @@ $(document).ready(function() {
 	});
 });
 
-function display(arr,arr1) {
+function display(arr,arr0,arr1) {
 	//创建对象
 	for (var i = 0; i < arr[0]; i++) {
 		var node = document.getElementById('identity').cloneNode(true);
@@ -40,7 +43,7 @@ function display(arr,arr1) {
 		//显示身份
 		var idcard = document.getElementById('idcard' + i);
 		var No = document.getElementById('No' + i);
-		if (arr1[i] === 1) {
+		if (arr0[i] === 1) {
 			idcard.innerHTML = "杀手";
 		} else {
 			idcard.innerHTML = "平民";
@@ -52,11 +55,10 @@ function display(arr,arr1) {
 			idcard.style.background = 'rgb(26,153,183,0.52)';
 		}
 	}
-
 }
 function killing(arr,arr1) {
 	var ifbool = [].concat(arr1);
-	var temp = [].concat(arr);
+	var days = JSON.parse(window.sessionStorage.days);
 	$(".identity").on('click', 'img', function() {
 		var kill = $(this).prevAll('.idcard');
 		var number = $(this).prevAll('.No');
@@ -73,6 +75,9 @@ function killing(arr,arr1) {
 			console.log('返回');
 			console.log(arr);
 			console.log(arr1);
+		}
+		else if (days == 1.5 && ifbool[killed] == 1) {
+			alert("第一晚狼人不能自杀");
 		}
 		else{
 			kill.css('background', 'rgb(26,153,183,0.52)');
@@ -93,19 +98,36 @@ function detection (arr1){
 	console.log("已死亡人数："+dead);
 	return	dead;
 }
+function logData(arr1){
+	var ifbool = JSON.parse(window.sessionStorage.arr1);
+	var days = JSON.parse(window.sessionStorage.days);
+	var killed;
+	for (var i = 0; i < arr1.length; i++) {
+		if (arr1[i] == -1 && ifbool[i] !== -1) {
+			killed=i;
+			idcard=ifbool[i];
+		}
+	}
+	var logData = new Array ();
+	if (window.sessionStorage.logData) {
+		logData=JSON.parse(window.sessionStorage.logData)
+	}
+	var log = [days,killed+1,idcard];
+	logData.push(log);
+	window.sessionStorage.logData = JSON.stringify(logData);
+	console.log(window.sessionStorage.logData);
+}
 
 function getSession() {
-	var temp = sessionStorage.arr;
-	var arr = JSON.parse(temp);
+	var arr = JSON.parse(sessionStorage.arr);
 	console.log(arr);
-	temp = sessionStorage.arr1;
-	var arr1 = JSON.parse(temp)
+	var arr0 = JSON.parse(sessionStorage.arr0)
+	console.log(arr0);
+	var arr1 = JSON.parse(sessionStorage.arr1)
 	console.log(arr1);
-	return [arr, arr1];
+	return [arr, arr0,arr1];
 }
 function setSession(arr,arr1){
-	var temp = JSON.stringify(arr)
-	window.sessionStorage.arr = temp ;
-	temp = JSON.stringify(arr1)
-	window.sessionStorage.arr1 = temp ;
+	window.sessionStorage.arr = JSON.stringify(arr) ;
+	window.sessionStorage.arr1 = JSON.stringify(arr1) ;
 }

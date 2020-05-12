@@ -21,10 +21,9 @@ btn3.onclick = function (){
 
 	//将人员配比arr、身份arr1存储到浏览器
 	window.sessionStorage.clear();
-	var temp = JSON.stringify(arr)
-	window.sessionStorage.arr = temp ;
-	temp = JSON.stringify(arr1)
-	window.sessionStorage.arr1 = temp ;
+	window.sessionStorage.arr = JSON.stringify(arr) ;
+	window.sessionStorage.arr1 = JSON.stringify(arr1) ;
+	window.sessionStorage.arr0 = JSON.stringify(arr1) ;
 
 	//判断输入框是否为空
 	var text = document.getElementById('text');

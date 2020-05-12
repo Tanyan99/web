@@ -2,17 +2,22 @@ $(document).ready(function() {
 	$("#btn1").click(function() {
 		window.location.href = "check.html";
 	});
-
-	
+	$("#over").click(function() {
+		window.location.href = "index.html";
+	});
+	$("#check").click(function() {
+		window.location.href = "check.html";
+	});
 
 	step.initialize();
 	detection(step.days);
+	addFlowchart();
 });
 
 
 var step = {　　
 	//第n天
-	days: 1,    
+	days: 1.0,    
 	// 当前状态
 	currentState: 'killing',
 
@@ -29,6 +34,7 @@ var step = {　　
 		switch(step.currentState) {
 			case "killing"://杀手杀人
 				step.currentState = 'lastWords';
+				step.days += 0.5;
 				killing();
 				//console.log('killing');
 				break;
@@ -47,7 +53,7 @@ var step = {　　
 
 			case "vote"://全民投票
 				step.currentState = 'killing';
-				step.days += 1;
+				step.days += 0.5;
 				killing();
 				//console.log('vote');
 				break;
@@ -64,19 +70,32 @@ var step = {　　
 	createClick: function (){
 		switch(step.currentState) {
 		case "killing"://杀手杀人
-			$('#killing').one("click", step.transition);
+
+			$('#flowchart #killing').unbind('click').one("click", step.transition);
+			$('#flowchart #lastWords').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #speak').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #vote').unbind('click').click(function() {alert('请按步骤操作！');});
 			break;
 
 		case "lastWords"://亡者遗言
-			$('#lastWords').one("click", step.transition);
+			$('#flowchart #lastWords').unbind('click').one("click", step.transition);
+			$('#flowchart #killing').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #speak').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #vote').unbind('click').click(function() {alert('请按步骤操作！');});
 			break;
 
 		case "speak"://依次发言
-			$('#speak').one("click", step.transition);
+			$('#flowchart #speak').unbind('click').one("click", step.transition);
+			$('#flowchart #lastWords').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #killing').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #vote').unbind('click').click(function() {alert('请按步骤操作！');});
 			break;
 
 		case "vote"://全民投票
-			$('#vote').one("click", step.transition);
+			$('#flowchart #vote').unbind('click').one("click", step.transition);
+			$('#flowchart #lastWords').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #speak').unbind('click').click(function() {alert('请按步骤操作！');});
+			$('#flowchart #killing').unbind('click').click(function() {alert('请按步骤操作！');});
 			break;
 
 		default:
@@ -89,20 +108,20 @@ var step = {　　
 function setClicked() {
 	switch(step.currentState) {
 		case "vote" :
-			$('#vote').css('background-color', '#92b7a5');
-			$('#vote div').css('border-right', '5vh solid #92b7a5');
+			$('#flowchart #vote').css('background-color', '#92b7a5');
+			$('#flowchart #vote div').css('border-right', '5vh solid #92b7a5');
 		case "speak":
-			$('#speak').css('background-color', '#92b7a5');
-			$('#speak div').css('border-right', '5vh solid #92b7a5');
+			$('#flowchart #speak').css('background-color', '#92b7a5');
+			$('#flowchart #speak div').css('border-right', '5vh solid #92b7a5');
 		case "lastWords":
-			$('#lastWords').css('background-color', '#92b7a5');
-			$('#lastWords div').css('border-right', '5vh solid #92b7a5');
+			$('#flowchart #lastWords').css('background-color', '#92b7a5');
+			$('#flowchart #lastWords div').css('border-right', '5vh solid #92b7a5');
 		case "killing":
-			$('#killing').css('background-color', '#92b7a5');
-			$('#killing div').css('border-right', '5vh solid #92b7a5');
+			$('#flowchart #killing').css('background-color', '#92b7a5');
+			$('#flowchart #killing div').css('border-right', '5vh solid #92b7a5');
 			break;
 		default:
-			console.log('请按步骤操作');
+			console.log('Invalid State!');
 			break;
 	}
 }
@@ -110,9 +129,9 @@ function setClicked() {
 function killing(){
 	var arr = sessionStorage.arr;
 	//console.log(arr);
-	var arr1 = sessionStorage.arr1;
+	var arr0 = sessionStorage.arr1;
 	//console.log(arr1);
-	if (arr == undefined || arr1 == undefined) {alert('false!请重新设置玩家人数！');}
+	if (arr == undefined || arr0 == undefined) {alert('false!请重新设置玩家人数！');}
 	else {
 		window.location.href = "killing.html";
 	}
@@ -126,24 +145,15 @@ function getSession_currentState() {
 		step.currentState = Session_currentState;
 		switch(step.currentState) {
 			case "vote" :
-				$('#speak').css('background-color', '#92b7a5');
-				$('#speak div').css('border-right', '5vh solid #92b7a5');
+				$('#flowchart #speak').css('background-color', '#92b7a5');
+				$('#flowchart #speak div').css('border-right', '5vh solid #92b7a5');
 			case "speak":
-				$('#lastWords').css('background-color', '#92b7a5');
-				$('#lastWords div').css('border-right', '5vh solid #92b7a5');
+				$('#flowchart #lastWords').css('background-color', '#92b7a5');
+				$('#flowchart #lastWords div').css('border-right', '5vh solid #92b7a5');
 			case "lastWords":
-				$('#killing').css('background-color', '#92b7a5');
-				$('#killing div').css('border-right', '5vh solid #92b7a5');
-				break;
-			/*case "killing":
-				$('#speak').css('background-color', '#24a7c6');
-				$('#speak div').css('border-right', '5vh solid #24a7c6');
-				$('#lastWords').css('background-color', '#24a7c6');
-				$('#lastWords div').css('border-right', '5vh solid #24a7c6');
-				$('#killing').css('background-color', '#24a7c6');
-				$('#killing div').css('border-right', '5vh solid #24a7c6');
-				break;*/
-		}
+				$('#flowchart #killing').css('background-color', '#92b7a5');
+				$('#flowchart #killing div').css('border-right', '5vh solid #92b7a5');
+				break;		}
 	} else {
 		console.log('请按步骤操作');
 	}
@@ -157,18 +167,34 @@ function getSession_currentState() {
 }
 function detection (days){
 	var arr = JSON.parse(window.sessionStorage.arr);
+	var arr0 = JSON.parse(window.sessionStorage.arr0);
 	var arr1 = JSON.parse(window.sessionStorage.arr1);
-	console.log(days,arr,arr1);
-	var i = 2;
+	console.log(days,arr,arr0,arr1);
+	var days = Math.floor(days);
+	var i = 1;
 	while (--days) {
 		var node = document.getElementById('day1').cloneNode(true);
-		node.id = "day" + i;
-		node.children[0].innerHTML = "第"+i+"天";
-		var content = document.getElementById('day'+(i-1));
+		var node0 = document.getElementById('flowchart').cloneNode(true);
+		node.id = "day" + (i+1);
+		node.children[0].innerHTML = "第"+(i+1)+"天";
+		node0.className = 'flowchart';
+		node0.id = 'flowchart'+i;
+		var content = document.getElementById('day'+i);
 		content.after(node);
+		content.after(node0);
 		i++;
-		if (arr[1]==0 || arr[1]>=arr[2]) {
-			window.location.href = "gameover.html";
-		}
+	}
+	if (arr[1]==0 || arr[1]>=arr[2]) {
+		window.location.href = "gameover.html";
 	}
 }
+function addFlowchart(){
+	$('.days').on('click', function() {
+			var flag = $(this).next().css('display');
+			if (flag == "none") {
+				$(this).next().css('display','flex');
+			}
+			else{
+				$(this).next().css('display','none');
+			}
+		});}

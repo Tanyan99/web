@@ -33,23 +33,28 @@
 		.identity{
 			width: 22vw;
 			height: 22vw;
+			background-color: #f5c97b;
 			border: 2px solid white;
-			background-color: #ffedc5;
-			margin: 0% 5vw 5vh 5vw;
+			text-align: center;
+			margin: 0 5vw 10vh;
+			position: relative;
 		}
-		#idcard{
+		#identity{
+			display: none;
+		}
+		.idcard{
 			height: 16vw;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 		}
-		#No{
-			background: rgb(26,153,183,0.52);
+		.No{
 			height: 6vw;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			background: rgb(26,153,183,0.52);
 			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		button{
@@ -74,15 +79,14 @@
 <body>
 	<div id="header">
 		<img src="images/Back _ Icon.png" alt="" id="btn1">
-		<span class="title">法官日记</span>
+		<span class="title">法官日志</span>
 		<img src="images/exit.png" alt="" id="btn2">
 	</div>
 	<div id ="content">
 		<div id="identity" class="identity">
-			<span id="idcard">平民</span>
-			<div id="No">1</div>
+			<span class="idcard">平民</span>
+			<span class="No">1号</span>
 		</div>
-
 	</div>
 
 

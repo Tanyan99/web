@@ -93,7 +93,8 @@ function startHeartAnimation() {
 })(jQuery);
 
 function timeElapse(date){
-	var current = Date();
+	//var current = Date();
+	var current = stopDate();
 	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
@@ -115,8 +116,8 @@ function timeElapse(date){
 }
 
 function showMessages() {
-	adjustWordsPosition();
-	$('#messages').fadeIn(3000, function() {
+	//adjustWordsPosition();
+	$('#messages').fadeIn(0, function() {
 		showLoveU();
 	});
 }
@@ -132,5 +133,5 @@ function adjustCodePosition() {
 }
 
 function showLoveU() {
-	$('#loveu').fadeIn(3000);
+	$('#loveu').fadeIn(0);
 }

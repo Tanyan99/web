@@ -139,6 +139,29 @@
 			opacity: 0.5;
 			z-index: -1;
 		}
+		.flowchart button{
+			background-color: #92b7a5;
+		}
+		.flowchart button div{
+			border-right: 5vh solid #92b7a5;
+		}
+		.flowchart{
+			background-color: white;
+			justify-content: space-around;
+			border: 1px solid #c9c9c9;
+			margin: 1vh 0;
+			padding: 5vh 0;
+			position: relative;
+			display: none;
+		}
+		.flowchart::before{
+			content: "";
+			width: 0;
+			height: 0;
+			border: 2vh solid;
+			border-color: transparent transparent white transparent;
+			position: absolute;
+			top: -3.5vh;
 	</style>
 </head>
 <body>
@@ -172,8 +195,8 @@
 	</div>
 
 	<div id="btn">
-		<button>结束游戏</button>
-		<button>法官日志</button>
+		<button id="over">结束游戏</button>
+		<button id="check">法官日志</button>
 	</div>
 	<script type="text/javascript" src="js/flow.js"></script>
 
