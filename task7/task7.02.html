@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>投票</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<style>
+body{margin: 0; background-color: #29bde0;}
+.toplf{
+	height: 32px;
+	width: 31px;
+	background-image: url(sprite02.png);
+	background-position: 0px 0px;
+	margin-left: 3vw;
+}
+.toprg{
+	height: 29px;
+	width: 29px;
+	background-image: url(sprite02.png);
+	background-position: -50px 0px;
+	margin-right: 3vw;
+}
+.playpic{
+	height: 37px;
+	width: 37px;
+	margin-right: 1vw;
+	background-image: url(sprite02.png);
+	background-position: -98px 0px;
+	border-radius: 50%;
+	background-color: #fbb435;
+}
+.down{
+	height: 15px;
+	width: 15px;
+	background-image: url(sprite02.png);
+	background-position: -150px 0px;
+	margin-left: 5vw;
+}
+.hover1,.hover2,.hover3,.hover4{
+	height: 14px;
+	width: 14px;
+	background-image: url(sprite02.png);
+	background-color: white;
+}
+.hover1{background-position: 0px -50px;}
+.hover2{background-position: -25px -50px;}
+.hover3{background-position: -50px -50px;}
+.hover4{background-position: -75px -50px;}	
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.7rem;
+	color: white;
+	height: 11vh;
+	background-color: #29bde0;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+}
+.play{
+	height: 8vh;
+	background: rgba(255,255,255,0.67);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 11vh;
+}
+.text1{
+display: inline-block;
+	margin-left: 4vw;
+}
+.text2{
+	display: block;
+	margin-left: 5vw;
+	color: white;
+	font-size: 1.1rem;
+	margin-bottom: 6%;
+}
+.identity{
+	width: 22vw;
+	height: 22vw;
+	background-color: #f5c97b;
+	border: 3px solid white;
+	text-align: center;
+	margin: 0% 3% 6% 3%;
+}
+.iden{
+	font-size: 5vw;
+	height: 16vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.nmb{
+	font-size: 4vw;
+	height: 6vw;
+	background: #83b09a;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.id{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-bottom: 9vh;
+}
+.hover{
+	display: none;
+	width: 22vw;
+}
+.identity:hover .hover{
+	display: block;
+}
+.button{
+	display: block;
+	color: white;
+	background-color: #fbb435;
+	text-align: center;
+	width: 60vw;
+	padding: 1vw;
+	margin: 1vh 19vw;
+	text-decoration:none;
+}
+.mp3{
+    position: absolute;
+    right: 0%;
+    opacity: 0;
+    width: 88px;
+    transform: rotate(180deg);
+}
+footer{
+	background-color: #29bde0;
+	position: fixed;
+	bottom: 0;
+}
+</style>
+</head>
+<body>
+<header>
+		<div class="toplf"></div>
+		<span>投票</span>
+		<div class="toprg"></div>
+</header>
+<main>
+	<div class="play">
+		<span class="text1">发言讨论结束，大家请投票</span>
+		<div class="playpic"></div>
+		<audio class="mp3" src="wudi.mov" controls preload></audio>
+	</div>
+	<div class="down"></div>
+	<span class="text2">点击得票数最多人的头像</span>
+	
+	<div class="id">
+		<div class="identity">
+			<span class="iden">平民</span>
+			<span class="nmb">1号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">狼人</span>
+			<span class="nmb">2号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">平民</span>
+			<span class="nmb">3号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">狼人</span>
+			<span class="nmb">4号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">平民</span>
+			<span class="nmb">5号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">平民</span>
+			<span class="nmb">6号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">平民</span>
+			<span class="nmb">7号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">女巫</span>
+			<span class="nmb">8号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">狼人</span>
+			<span class="nmb">9号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">狼人</span>
+			<span class="nmb">10号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">预言家</span>
+			<span class="nmb">11号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+		<div class="identity">
+			<span class="iden">狼人</span>
+			<span class="nmb">12号</span>
+			<image class="hover" src="sprite02.1.png"/>
+		</div>
+	</div>
+</main>
+<footer>
+	<a class="button" href="task7.03.html">
+		<span class="text3">投死</span>
+	</a>
+</footer>
+</body>
+</html>
